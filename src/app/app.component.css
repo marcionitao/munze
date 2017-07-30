@@ -1,5 +1,18 @@
+.nav{
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
 #img {
-    margin-top: 15px;
-    margin-left: 15px;
+    vertical-align: middle;
     width: 70px;
+}
+
+#title {
+    color: goldenrod;
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    margin-left: 4px;
+    vertical-align: middle;
+
 }
