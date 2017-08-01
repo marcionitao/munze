@@ -1,7 +1,10 @@
+import { async } from '@angular/core/testing';
 import { Coins } from './../model/coins';
 import { CoinsService } from './../service/coins.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CurrencyPipe, PercentPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-coins',

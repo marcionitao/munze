@@ -1,6 +1,27 @@
-<div *ngFor="let coin of coins" >
-<h1>
-    {{ coin.id }}
-</h1>
+<div class="row">
+  <div class="col-6">
 
+      <div class="card" *ngFor="let coin of coins">
+
+        <div class="card-header">{{coin.name}}</div>
+        <div class="card-block">
+          <p class="card-text">The top resources for all things related to the Sun.</p>
+
+        </div>
+
+    </div>
+  </div>
+
+  <div class="col-6">
+
+      <div class="card" *ngFor="let coin of coins">
+
+        <div class="card-header">{{coin.name}}</div>
+        <div class="card-block">
+          <p class="card-text">The top resources for all things related to the Sun.</p>
+
+        </div>
+
+    </div>
+  </div>
 </div>

@@ -1,0 +1,14 @@
+
+.card {
+  min-width: 30em;
+  max-width: 100em;
+  margin: 0 auto;
+  float: none;
+  border-color: rgba(255, 255, 255, 0.2);
+   background-color: transparent;
+}
+
+.card-header {
+  background-color: transparent;
+  color: white;
+}

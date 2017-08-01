@@ -2,14 +2,35 @@
   <div class="card-columns">
 
     <div class="card card-inverse" *ngFor="let coin of coins">
-      
-      <div class="card-header">{{coin.name}}</div>
-      <div class="card-block">
-        <p class="card-text">The top resources for all things related to the Sun.</p>
-        <!--<button routerLink="/selected/{{coin.id}}">show</button>-->
-        <button (click)="coinDetails(coin.id)" >show</button>
-      </div>
-    
+
+      <a (click)="coinDetails(coin.id)">
+        <div class="card-header">{{coin.name}}</div>
+
+        <div class="card-block">
+          
+          <div class="row">
+            <div class="col-4">
+              <img *ngIf="coin.name == 'Bitcoin'"  src="./assets/img/coin-1.png" id="img-coin">
+              <img *ngIf="coin.name == 'Ethereum'"  src="./assets/img/coin-2.png" id="img-coin">
+              <img *ngIf="coin.name == 'NEM'"  src="./assets/img/coin-3.png" id="img-coin">
+              <img *ngIf="coin.name == 'Stratis'"  src="./assets/img/coin-4.png" id="img-coin">
+              <img *ngIf="coin.name == 'Dash'"  src="./assets/img/coin-5.png" id="img-coin">
+              <img *ngIf="coin.name == 'Ethereum Classic'"  src="./assets/img/coin-6.png" id="img-coin">
+              <img *ngIf="coin.name == 'Litecoin'"  src="./assets/img/coin-7.png" id="img-coin">
+              <img *ngIf="coin.name == 'Monero'"  src="./assets/img/coin-8.png" id="img-coin">
+              <img *ngIf="coin.name == 'Ripple'"  src="./assets/img/coin-9.png" id="img-coin">
+              <img *ngIf="coin.name == 'IOTA'"  src="./assets/img/coin-10.png" id="img-coin">
+            </div>
+
+            <div class="col-8">
+              <p class="card-text">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</p>
+              <p id="_24h" *ngIf="coin.percent_change_24h < '0'" style="color:red">{{coin.percent_change_24h}}% &darr;</p>
+              <p id="_24h" *ngIf="coin.percent_change_24h > '0'" style="color:greenyellow">{{coin.percent_change_24h}}% &uarr;</p>
+            </div>
+          </div>
+
+        </div>
+      </a>
     </div>
 
   </div>

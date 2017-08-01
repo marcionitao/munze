@@ -6,47 +6,79 @@
 }
 
 @media (min-width: 34em) {
-    .card-columns {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
-    }
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
 }
 
 @media (min-width: 48em) {
-    .card-columns {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-    }
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
 }
 
 @media (min-width: 62em) {
-    .card-columns {
-        -webkit-column-count: 4;
-        -moz-column-count: 4;
-        column-count: 4;
-    }
+  .card-columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
 }
 
 @media (min-width: 75em) {
-    .card-columns {
-        -webkit-column-count: 5;
-        -moz-column-count: 5;
-        column-count: 5;
-    }
+  .card-columns {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+  }
 }
 
 .card {
+  height: 10em;
   background-color: rgba(67, 1, 35, 1);
-  border-color: rgba(255, 255, 255, 0.2);   
+  border-color: rgba(255, 255, 255, 0.2);
+  
 }
 
 .card-inverse {
-    border-color:goldenrod;  
+  background-color:  rgba(0, 0, 0, 0.2);
 }
 
-.card-header { 
+.card-header {
+ text-align: center;
   background-color: transparent;
-  color: white; 
-} 
+  color: white;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+}
+
+.card-text {
+  vertical-align: middle;
+  font-family: 'Questrial', sans-serif;
+  font-size: 19px;
+  color: white;
+  margin-bottom: 2px;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.col-8 {
+  text-align: center;
+}
+
+#img-coin {
+  width: 55px;
+  vertical-align: middle;
+}
+
+#_24 {
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+}
