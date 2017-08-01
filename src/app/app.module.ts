@@ -1,21 +1,26 @@
+import { CommonModule } from '@angular/common';
+import { RoutingModule } from './routing/routing.module';
 import { CoinsService } from './service/coins.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { CoinsComponent } from './coins/coins.component';
+import { CoinDetailsComponent } from './coin-details/coin-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoinsComponent
+    CoinsComponent,
+    CoinDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CommonModule,
+    RoutingModule
   ],
   providers: [CoinsService],
   bootstrap: [AppComponent]
