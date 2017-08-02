@@ -1,3 +1,4 @@
+import { AboutComponent } from './../about/about.component';
 import { CoinDetailsComponent } from './../coin-details/coin-details.component';
 import { CoinsComponent } from './../coins/coins.component';
 import { AppComponent } from './../app.component';
@@ -8,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'home', component: CoinsComponent },
   { path: 'selected/:id', component: CoinDetailsComponent },
+  { path: 'about', component: AboutComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

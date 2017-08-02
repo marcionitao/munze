@@ -9,3 +9,4 @@ Cryptocurrencies emerged in 2009 with the first decentralized cryptocurrency - B
 - Angular 4
 - Bootstrap
 - CoinMarketCap API
+- ng2-opd-popup 

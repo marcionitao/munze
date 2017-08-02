@@ -8,9 +8,19 @@
    background-color: transparent;
 }
 
+.card-text {
+  vertical-align: middle;
+  font-family: 'Questrial', sans-serif;
+  font-size: 17px;
+  color: white;
+  margin-bottom: 2px;
+}
+
 .card-header {
   background-color: transparent;
-  color: white;
+  color: gold;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
 }
 
 .carousel-control-prev {

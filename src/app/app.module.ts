@@ -8,19 +8,21 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CoinsComponent } from './coins/coins.component';
 import { CoinDetailsComponent } from './coin-details/coin-details.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoinsComponent,
-    CoinDetailsComponent
+    CoinDetailsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     CommonModule,
-    RoutingModule
+    RoutingModule,
   ],
   providers: [CoinsService],
   bootstrap: [AppComponent]

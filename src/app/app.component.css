@@ -1,6 +1,7 @@
-.nav{
+#head {
     padding: 10px;
     margin-bottom: 60px;
+    background-color: transparent;
 }
 
 #img {
@@ -15,4 +16,15 @@
     font-size: 18px;
     margin-left: 4px;
     vertical-align: middle;
+}
+
+#about {
+    color: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
 }
