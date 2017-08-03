@@ -1,26 +1,59 @@
+<div id="head">
 <div id="back">
-<a class="carousel-control-prev" [routerLink]="['/home']" role="button" data-slide="prev">
+  <a class="carousel-control-prev" [routerLink]="['/home']" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
 </div>
 
 <div class="container">
-<div class="row">
-  <div class="col-6">
+  <div class="row">
+    <div class="col-6">
 
       <div class="card" *ngFor="let coin of coins">
 
         <div class="card-header">{{coin.name}}</div>
+        
         <div class="card-block">
-          <p class="card-text">The top resources for all things related to the Sun.</p>
-
+          <img *ngIf="coin.name == 'Bitcoin'" src="./assets/img/coin-1.png" id="img-coin">
+          <img *ngIf="coin.name == 'Ethereum'" src="./assets/img/coin-2.png" id="img-coin">
+          <img *ngIf="coin.name == 'NEM'" src="./assets/img/coin-3.png" id="img-coin">
+          <img *ngIf="coin.name == 'Stratis'" src="./assets/img/coin-4.png" id="img-coin">
+          <img *ngIf="coin.name == 'Dash'" src="./assets/img/coin-5.png" id="img-coin">
+          <img *ngIf="coin.name == 'Ethereum Classic'" src="./assets/img/coin-6.png" id="img-coin">
+          <img *ngIf="coin.name == 'Litecoin'" src="./assets/img/coin-7.png" id="img-coin">
+          <img *ngIf="coin.name == 'Monero'" src="./assets/img/coin-8.png" id="img-coin">
+          <img *ngIf="coin.name == 'Ripple'" src="./assets/img/coin-9.png" id="img-coin">
+          <img *ngIf="coin.name == 'IOTA'" src="./assets/img/coin-10.png" id="img-coin">
+          <img *ngIf="coin.name == 'Bitcoin Cash'" src="./assets/img/coin-11.png" id="img-coin">
+          <img *ngIf="(coin.name !== 'Bitcoin Cash') 
+                && (coin.name !== 'Bitcoin') 
+                && (coin.name !== 'Ethereum')
+                && (coin.name !== 'NEM')
+                && (coin.name !== 'Stratis')
+                && (coin.name !== 'Dash')
+                && (coin.name !== 'Ethereum Classic')
+                && (coin.name !== 'Litecoin')
+                && (coin.name !== 'Monero')
+                && (coin.name !== 'Ripple')
+                && (coin.name !== 'IOTA')" src="./assets/img/error.png" id="img-coin">
+          <br>
+          <span id="rank"> Rank {{ coin.rank }} </span>
         </div>
+
+        <div class="card-block">
+          <p *ngIf="coin.name == 'Bitcoin'"  class="card-text">The first decentralized peer-to-peer payment network in which encryption 
+            techniques are used to regulate the generation of units of currency and 
+            verify the transfer of funds, all operating independently of a central bank.
+          </p>
+          <p class="glyphicon glyphicon-asterisk"></p>
+        </div>
+        
+      </div>
 
     </div>
-  </div>
 
-  <div class="col-6">
+    <div class="col-6">
 
       <div class="card" *ngFor="let coin of coins">
 
@@ -30,6 +63,7 @@
 
         </div>
 
+      </div>
     </div>
   </div>
 </div>

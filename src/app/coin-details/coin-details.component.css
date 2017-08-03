@@ -1,3 +1,6 @@
+#head {
+  margin-top: 30px;
+}
 
 .card {
   min-width: 30em;
@@ -10,14 +13,41 @@
 
 .card-header {
   background-color: transparent;
-  color: white;
+  color: gold;
+  font-family: 'Questrial', sans-serif;
+  font-size: 21px;
 }
 
 .carousel-control-prev {
   width: 5%;
 }
 
+.card-block {
+  text-align: center;
+}
+
+.card-text {
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+#img-coin{
+  width: 150px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
 #back {
   text-align: center;
   vertical-align: middle;
+}
+
+#rank {
+  background-color: green;
+  color: white;
+  text-align: center!important;
+  font-family: 'Questrial', sans-serif;
+  font-size: 17px;
 }

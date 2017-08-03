@@ -1,10 +1,14 @@
+<div id="head">
 <div class="row">
   <div class="card-columns">
 
     <div class="card card-inverse" *ngFor="let coin of coins">
 
       <a (click)="coinDetails(coin.id)">
-        <div class="card-header">{{coin.name}}</div>
+        
+        <div class="card-header">
+          <span id="title">{{coin.name}}</span>
+        </div>
 
         <div class="card-block">
           
@@ -38,6 +42,7 @@
               <p class="card-text">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</p>
               <p id="_24h" *ngIf="coin.percent_change_24h < '0'" style="color:red">{{coin.percent_change_24h}}% &darr;</p>
               <p id="_24h" *ngIf="coin.percent_change_24h > '0'" style="color:greenyellow">{{coin.percent_change_24h}}% &uarr;</p>
+             
             </div>
           </div>
 
@@ -46,4 +51,5 @@
     </div>
 
   </div>
+</div>
 </div>
