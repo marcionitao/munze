@@ -1,7 +1,7 @@
 import { Coins } from './../model/coins';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -13,10 +13,21 @@ export class CoinsService {
   urlDetails = 'https://api.coinmarketcap.com/v1/ticker';
 
   constructor(private http: Http) { }
-
+/*
   getCoins() {
     return this.http.get(this.urlBase)
     .map(response => response.json())
+    .catch(this.handleError);
+  }
+*/
+
+/*It will do GET request in server API location in 5000 mileseconds. 
+So we will have our data updated in real time*/
+  getCoins() {
+  return Observable
+    .timer(0, 5000)
+    .flatMap(() =>  this.http.get(this.urlBase))
+    .map(res => res.json())
     .catch(this.handleError);
   }
 
@@ -31,4 +42,5 @@ export class CoinsService {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
+  
 }
