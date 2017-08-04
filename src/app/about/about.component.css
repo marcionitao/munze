@@ -1,12 +1,13 @@
 #head {
   margin-top: 80px;
 }
+
 .card {
   min-width: 30em;
   max-width: 100em;
   margin: 0 auto;
   float: none;
-   background-color: transparent;
+  background-color: transparent;
 }
 
 .card-text {

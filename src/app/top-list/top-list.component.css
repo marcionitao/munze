@@ -1,0 +1,12 @@
+#head {
+  margin-top: 80px;
+}
+
+.carousel-control-prev {
+  width: 5%;
+}
+
+#back {
+  text-align: center;
+  vertical-align: middle;
+}

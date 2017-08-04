@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { CoinsComponent } from './coins/coins.component';
 import { CoinDetailsComponent } from './coin-details/coin-details.component';
 import { AboutComponent } from './about/about.component';
+import { TopListComponent } from './top-list/top-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoinsComponent,
     CoinDetailsComponent,
-    AboutComponent
+    AboutComponent,
+    TopListComponent
   ],
   imports: [
     BrowserModule,

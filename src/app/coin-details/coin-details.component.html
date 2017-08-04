@@ -1,32 +1,32 @@
 <div id="head">
-<div id="back">
-  <a class="carousel-control-prev" [routerLink]="['/home']" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-</div>
+  <div id="back">
+      <a class="carousel-control-prev" [routerLink]="['/home']" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+  </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-6">
+  <div class="container">
+    <div class="row">
+      <div class="card-deck">
 
-      <div class="card" *ngFor="let coin of coins">
+        <div class="card" *ngFor="let coin of coins">
 
-        <div class="card-header">{{coin.name}}</div>
-        
-        <div class="card-block">
-          <img *ngIf="coin.name == 'Bitcoin'" src="./assets/img/coin-1.png" id="img-coin">
-          <img *ngIf="coin.name == 'Ethereum'" src="./assets/img/coin-2.png" id="img-coin">
-          <img *ngIf="coin.name == 'NEM'" src="./assets/img/coin-3.png" id="img-coin">
-          <img *ngIf="coin.name == 'Stratis'" src="./assets/img/coin-4.png" id="img-coin">
-          <img *ngIf="coin.name == 'Dash'" src="./assets/img/coin-5.png" id="img-coin">
-          <img *ngIf="coin.name == 'Ethereum Classic'" src="./assets/img/coin-6.png" id="img-coin">
-          <img *ngIf="coin.name == 'Litecoin'" src="./assets/img/coin-7.png" id="img-coin">
-          <img *ngIf="coin.name == 'Monero'" src="./assets/img/coin-8.png" id="img-coin">
-          <img *ngIf="coin.name == 'Ripple'" src="./assets/img/coin-9.png" id="img-coin">
-          <img *ngIf="coin.name == 'IOTA'" src="./assets/img/coin-10.png" id="img-coin">
-          <img *ngIf="coin.name == 'Bitcoin Cash'" src="./assets/img/coin-11.png" id="img-coin">
-          <img *ngIf="(coin.name !== 'Bitcoin Cash') 
+          <div class="card-header">{{coin.name}}</div>
+
+          <div class="card-block">
+            <img *ngIf="coin.name == 'Bitcoin'" src="./assets/img/coin-1.png" id="img-coin">
+            <img *ngIf="coin.name == 'Ethereum'" src="./assets/img/coin-2.png" id="img-coin">
+            <img *ngIf="coin.name == 'NEM'" src="./assets/img/coin-3.png" id="img-coin">
+            <img *ngIf="coin.name == 'Stratis'" src="./assets/img/coin-4.png" id="img-coin">
+            <img *ngIf="coin.name == 'Dash'" src="./assets/img/coin-5.png" id="img-coin">
+            <img *ngIf="coin.name == 'Ethereum Classic'" src="./assets/img/coin-6.png" id="img-coin">
+            <img *ngIf="coin.name == 'Litecoin'" src="./assets/img/coin-7.png" id="img-coin">
+            <img *ngIf="coin.name == 'Monero'" src="./assets/img/coin-8.png" id="img-coin">
+            <img *ngIf="coin.name == 'Ripple'" src="./assets/img/coin-9.png" id="img-coin">
+            <img *ngIf="coin.name == 'IOTA'" src="./assets/img/coin-10.png" id="img-coin">
+            <img *ngIf="coin.name == 'Bitcoin Cash'" src="./assets/img/coin-11.png" id="img-coin">
+            <img *ngIf="(coin.name !== 'Bitcoin Cash') 
                 && (coin.name !== 'Bitcoin') 
                 && (coin.name !== 'Ethereum')
                 && (coin.name !== 'NEM')
@@ -37,34 +37,126 @@
                 && (coin.name !== 'Monero')
                 && (coin.name !== 'Ripple')
                 && (coin.name !== 'IOTA')" src="./assets/img/error.png" id="img-coin">
-          <br>
-          <span id="rank"> Rank {{ coin.rank }} </span>
+            <br>
+            <span id="rank"> Rank {{ coin.rank }} </span>
+          </div>
+
+          <div class="card-block">
+            <p *ngIf="coin.name == 'Bitcoin'" class="card-text">
+            The first decentralized peer-to-peer payment network in which encryption techniques are used 
+            to regulate the generation of units of currency and verify the transfer of funds, all operating 
+            independently of a central bank.
+            </p>
+            <p *ngIf="coin.name == 'Ethereum'" class="card-text">
+            An open-source, public, blockchain-based computing platform that enables developers to build 
+            and deploy decentralized applications. Ether (ETH), the crypto token that fuels the Ethereum 
+            network acts as a tradeable cryptocurrency and is used to pay for transaction fees and services 
+            on the network.
+            </p>
+            <p *ngIf="coin.name == 'Ripple'" class="card-text">
+            Both a digital currency (XRP) and a distributed real-time payment protocol within which that 
+            currency is transferred. Ripple's distributed technology aims to enable banks to send real-time 
+            international payments across networks; to meet growing demands for faster, low-cost, on-demand 
+            global payment services.
+            </p>
+            <p *ngIf="coin.name == 'Bitcoin Cash'" class="card-text">
+            A decentralized peer-to-peer payment network that came into existence as a result of a hard 
+            fork from the original bitcoin blockchain. Bitcoin Cash emerged after some of the leading backers 
+            disagreed on how to take Bitcoin further and are utilizing a new proposal that consists of a new 
+            transaction type and an increase in block limit size.
+            </p>
+            <p *ngIf="coin.name == 'Litecoin'" class="card-text">
+            An open-source peer-to-peer cryptocurrency that uses the scrypt proof of work algorithm as 
+            opposed to Bitcoin's hashing algorithm. Litecoin was originally created to improve upon Bitcoin 
+            by speeding up transaction confirmations.
+            </p>
+            <p *ngIf="coin.name == 'NEM'" class="card-text">
+            A peer-to-peer cryptocurrency (XEM) and blockchain platform that has introduced new features 
+            in blockchain technology through its proof-of-importance (POI) algorithm, encrypted messaging 
+            system, multisignature accounts and Eigentrust++ reputation system.
+            </p>
+            <p *ngIf="coin.name == 'Ethereum Classic'" class="card-text">
+            An open-source, blockchain-based computing platform that came into existence as a result of 
+            the DAO hard-fork. Identical to Ethereum up to a certain block (block 1920000), Ethereum Classic 
+            consolidated members of the Ethereum community who rejected the fork.
+            </p>
+            <p *ngIf="coin.name == 'Dash'" class="card-text">
+            An open-source peer-to-peer cryptocurrency that offers all the features of Bitcoin as well as 
+            other capabilities which include private transactions, instant transactions and decentralized 
+            governance.
+            </p>
+            <p *ngIf="coin.name == 'IOTA'" class="card-text">
+            A new transactional settlement and data integrity layer for the Internet of Things. IOTA is 
+            based on a new distributed ledger architecture which aims to overcome inefficiencies of current 
+            Blockchain designs to introduce a new way of reaching peer-to-peer consensus.
+            </p>
+            <p *ngIf="coin.name == 'Monero'" class="card-text">
+            An open-source cryptocurrency that is heavily focused on privacy, decentralisation and scalability. 
+            Monero is based on the CryptoNote protocol and has significant algorithmic differences to Bitcoin.
+            </p>
+            <p *ngIf="coin.name == 'Stratis'" class="card-text">
+            Stratis is a Blockchain-as-a-service (BaaS) Platform, created to provide solutions for corporations 
+            in the financial sector that want to enjoy the benefits of Blockchain technology. Stratis allows
+            companies to create their custom blockchain applications with the features they require, making 
+            the development process simpler and accelerating the development lifecycle for blockchain projects.
+            </p>
+          </div>
+
+          <div class="card-block">
+            <a *ngIf="coin.name == 'Bitcoin'" href="https://bitcoin.org/bitcoin.pdf"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Bitcoin'" href="https://bitcoin.org/en/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Bitcoin'" href="https://github.com/bitcoin"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+          
+            <a *ngIf="coin.name == 'Ethereum'" href="https://github.com/ethereum/wiki/wiki/White-Paper"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Ethereum'" href="https://www.ethereum.org/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Ethereum'" href="https://github.com/ethereum"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+            
+            <a *ngIf="coin.name == 'Ripple'" href="https://ripple.com/files/ripple_consensus_whitepaper.pdf"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Ripple'" href="https://ripple.com/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Ripple'" href="https://github.com/ripple"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+          
+            <a *ngIf="coin.name == 'Litecoin'" href="https://litecoin.org/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Litecoin'" href="https://github.com/litecoin-project"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+            
+            <a *ngIf="coin.name == 'NEM'" href="https://www.nem.io/NEM_techRef.pdf"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'NEM'" href="https://www.nem.io/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'NEM'" href="https://github.com/NemProject"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+          
+            <a *ngIf="coin.name == 'Ethereum Classic'" href="https://coss.io/documents/white-papers/ethereum-classic.pdf"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Ethereum Classic'" href="https://ethereumclassic.github.io/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Ethereum Classic'" href="https://github.com/ethereumclassic"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+          
+            <a *ngIf="coin.name == 'Dash'" href="https://www.dash.org/wp-content/uploads/2015/04/Dash-WhitepaperV1.pdf"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Dash'" href="https://www.dash.org/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Dash'" href="https://github.com/dashpay"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+          
+            <a *ngIf="coin.name == 'IOTA'" href="https://iota.org/IOTA_Whitepaper.pdf"><img src="./assets/img/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'IOTA'" href="https://iota.org/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'IOTA'" href="https://github.com/iotaledger"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>
+          
+            <a *ngIf="coin.name == 'Monero'" href="https://getmonero.org/"><img src="./assets/img/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'Monero'" href="https://github.com/monero-project"><img src="./assets/img/if_github_317712.png" id="img-footer"></a>         
+          </div>
+
         </div>
 
-        <div class="card-block">
-          <p *ngIf="coin.name == 'Bitcoin'"  class="card-text">The first decentralized peer-to-peer payment network in which encryption 
-            techniques are used to regulate the generation of units of currency and 
-            verify the transfer of funds, all operating independently of a central bank.
-          </p>
-          <p class="glyphicon glyphicon-asterisk"></p>
-        </div>
-        
-      </div>
+        <div class="card" *ngFor="let coin of coins">
 
-    </div>
-
-    <div class="col-6">
-
-      <div class="card" *ngFor="let coin of coins">
-
-        <div class="card-header">{{coin.name}}</div>
-        <div class="card-block">
-          <p class="card-text">The top resources for all things related to the Sun.</p>
+          <div class="card-block" id="dados">
+           
+            <legend id="c_price">Current Price</legend>
+            <p id="price">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</p>
+            <p id="_24h" *ngIf="coin.percent_change_24h < '0'" style="color:red">( {{coin.percent_change_24h}}% &darr;)</p>
+            <p id="_24h" *ngIf="coin.percent_change_24h > '0'" style="color:greenyellow">( {{coin.percent_change_24h}}% &uarr;)</p>
+            <legend id="c_price">Circulating Supply</legend>
+            <p id="price">{{ coin.available_supply | number: '1.0-2'}}</p>
+            <p id="price" style="margin-left:8px;">{{ coin.symbol }}</p>
+            <legend id="c_price">Market Cap</legend>
+            <p id="price">{{ coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</p>
+          </div>
 
         </div>
-
       </div>
     </div>
   </div>
-</div>
 </div>

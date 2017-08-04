@@ -1,26 +1,26 @@
 #head {
-    padding: 10px;
-    background-color: transparent;
+  padding: 10px;
+  background-color: transparent;
 }
 
 #img {
-    vertical-align: middle;
-    width: 50px;
-     margin-left: 30px;
+  vertical-align: middle;
+  width: 50px;
+  margin-left: 30px;
 }
 
 #title {
-    color: whitesmoke;
-    font-family: 'Questrial', sans-serif;
-    font-size: 18px;
-    margin-left: 4px;
-    vertical-align: middle;
+  color: whitesmoke;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: middle;
 }
 
 #about {
-    color: whitesmoke;
-    font-family: 'Questrial', sans-serif;
-    font-size: 16px;
+  color: gold;
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
 }
 
 a {
