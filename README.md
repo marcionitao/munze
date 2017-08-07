@@ -1,4 +1,6 @@
-# Münze
+![logo_2](https://user-images.githubusercontent.com/3647246/29043383-3f1e9e0c-7bbb-11e7-8bfe-a09cd72a4ccd.png)
+
+# CryptoMünze
 
 CryptoMünze is a real-time dashboard that displays the top 10 cryptocurrencies based on currency price, market capitalization and overall circulating supply - obtained from the leading cryptocurrency resource CoinMarketCap.
 
