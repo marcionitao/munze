@@ -19,7 +19,7 @@ export class TopListComponent implements OnInit {
 
   getCoins() {
    this.coinsService.getCoins()
-   .subscribe(res => this.coins);
+   .subscribe(coin => {this.coins = coin; console.log(coin) });
   }
 
 }

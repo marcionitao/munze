@@ -7,7 +7,37 @@
   </div>
 
   <div class="container">
-
+    
+    <table class="table table-responsive" style="font-size:15px">
+      <thead style="color:azure">
+        <tr class="default">
+          <th>Rank</th>
+          <th>Name</th>                  
+          <th>Price</th>
+          <th>Market cap usd</th>
+          <th>Available supply</th>
+          <th>Percent change 1h</th>
+          <th>Percent change 24h</th>
+          <th>Percent change 7d</th>    
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let coin of coins" style="color:white">
+            <td  class="text-center">{{coin.rank}}</td>
+            <td class="text-left" style="color:gold">{{coin.name}}</td>         
+            <td class="text-right">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</td>           
+            
+            <td class="text-right">{{coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</td>
+            <td class="text-right">{{coin.available_supply | number: '1.0-2'}}</td>    
+            <td  *ngIf="coin.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.percent_change_1h}}% &darr; </td>       
+            <td  *ngIf="coin.percent_change_1h > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_1h}}% &uarr; </td>
+            <td  *ngIf="coin.percent_change_24h < '0'"style="color:red" class="text-center"> {{coin.percent_change_24h}}% &darr; </td>
+            <td  *ngIf="coin.percent_change_24h > '0'"style="color:greenyellow" class="text-center"> {{coin.percent_change_24h}}% &uarr; </td>
+            <td  *ngIf="coin.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.percent_change_7d}}}% &darr; </td>
+            <td  *ngIf="coin.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_7d}}}% &uarr; </td>
+          </tr>
+      </tbody>
+    </table>
 
   </div>
   

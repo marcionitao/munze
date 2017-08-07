@@ -1,6 +1,7 @@
 #head {
   padding: 10px;
   background-color: transparent;
+  width: auto;
 }
 
 #img {
@@ -26,4 +27,8 @@
 a {
   cursor: pointer;
   cursor: hand;
+}
+
+.navbar-brand {
+  margin-left: 30px;
 }

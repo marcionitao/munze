@@ -16,7 +16,8 @@
 }
 
 .carousel-control-prev {
-  width: 5%;
+  width: 3%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .card-block {

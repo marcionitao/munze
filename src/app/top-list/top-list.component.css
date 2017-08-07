@@ -1,12 +1,14 @@
 #head {
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .carousel-control-prev {
-  width: 5%;
+  width: 3%;
+   background-color: rgba(0, 0, 0, 0.2);
 }
 
 #back {
   text-align: center;
   vertical-align: middle;
 }
+
