@@ -37,6 +37,16 @@
   margin-bottom: 5px;
 }
 
+#currency {
+  font-family: 'Questrial', sans-serif;
+  font-size: 17px;
+  color: gold;
+  text-align: left;
+  margin-right: 5px;
+  background-color: transparent;
+  display: inline-block;
+}
+
 #dados {
   text-align: left;
   margin-top: 30px;

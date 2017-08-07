@@ -14,17 +14,19 @@
           
           <div class="row">
             <div class="col-4">
-              <img *ngIf="coin.name == 'Bitcoin'"  src="./assets/img/coin-1.png" id="img-coin">
-              <img *ngIf="coin.name == 'Ethereum'"  src="./assets/img/coin-2.png" id="img-coin">
-              <img *ngIf="coin.name == 'NEM'"  src="./assets/img/coin-3.png" id="img-coin">
-              <img *ngIf="coin.name == 'Stratis'"  src="./assets/img/coin-4.png" id="img-coin">
-              <img *ngIf="coin.name == 'Dash'"  src="./assets/img/coin-5.png" id="img-coin">
-              <img *ngIf="coin.name == 'Ethereum Classic'"  src="./assets/img/coin-6.png" id="img-coin">
-              <img *ngIf="coin.name == 'Litecoin'"  src="./assets/img/coin-7.png" id="img-coin">
-              <img *ngIf="coin.name == 'Monero'"  src="./assets/img/coin-8.png" id="img-coin">
-              <img *ngIf="coin.name == 'Ripple'"  src="./assets/img/coin-9.png" id="img-coin">
-              <img *ngIf="coin.name == 'IOTA'"  src="./assets/img/coin-10.png" id="img-coin">
-              <img *ngIf="coin.name == 'Bitcoin Cash'"  src="./assets/img/coin-11.png" id="img-coin">
+              <img *ngIf="coin.name == 'Bitcoin'"  src="./assets/image/coin-1.png" id="img-coin">
+              <img *ngIf="coin.name == 'Ethereum'"  src="./assets/image/coin-2.png" id="img-coin">
+              <img *ngIf="coin.name == 'NEM'"  src="./assets/image/coin-3.png" id="img-coin">
+              <img *ngIf="coin.name == 'Stratis'"  src="./assets/image/coin-4.png" id="img-coin">
+              <img *ngIf="coin.name == 'Dash'"  src="./assets/image/coin-5.png" id="img-coin">
+              <img *ngIf="coin.name == 'Ethereum Classic'"  src="./assets/image/coin-6.png" id="img-coin">
+              <img *ngIf="coin.name == 'Litecoin'"  src="./assets/image/coin-7.png" id="img-coin">
+              <img *ngIf="coin.name == 'Monero'"  src="./assets/image/coin-8.png" id="img-coin">
+              <img *ngIf="coin.name == 'Ripple'"  src="./assets/image/coin-9.png" id="img-coin">
+              <img *ngIf="coin.name == 'IOTA'"  src="./assets/image/coin-10.png" id="img-coin">
+              <img *ngIf="coin.name == 'Bitcoin Cash'"  src="./assets/image/coin-11.png" id="img-coin">
+              <img *ngIf="coin.name == 'NEO'"  src="https://files.coinmarketcap.com/static/img/coins/128x128/neo.png" id="img-coin">
+              <img *ngIf="coin.name == 'Qtum'"  src="https://files.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
               <img *ngIf="(coin.name !== 'Bitcoin Cash') 
                 && (coin.name !== 'Bitcoin') 
                 && (coin.name !== 'Ethereum')
@@ -35,7 +37,9 @@
                 && (coin.name !== 'Litecoin')
                 && (coin.name !== 'Monero')
                 && (coin.name !== 'Ripple')
-                && (coin.name !== 'IOTA')"  src="./assets/img/error.png" id="img-coin">
+                && (coin.name !== 'NEO')
+                && (coin.name !== 'Qtum')
+                && (coin.name !== 'IOTA')"  src="./assets/image/error.png" id="img-coin">
             </div>
 
             <div class="col-8">

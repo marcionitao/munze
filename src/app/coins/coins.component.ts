@@ -26,7 +26,7 @@ export class CoinsComponent implements OnInit {
     this.coinsService.getCoins().subscribe(
       data => {
         this.coins = data;
-        console.log(data);
+        // console.log(data);
       });
   }
 
