@@ -377,7 +377,7 @@ var CoinsService = (function () {
     CoinsService.prototype.getCoin = function (id) {
         this.idCoin = id;
         var url = this.urlDetails + '/' + id + '/';
-        return this.http.get(url + '/')
+        return this.http.get(url)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
