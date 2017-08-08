@@ -353,7 +353,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CoinsService = (function () {
     function CoinsService(http) {
         this.http = http;
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        // private headers = new Headers({ 'Content-Type': 'application/json' });
         this.urlBase = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
         this.urlDetails = 'https://api.coinmarketcap.com/v1/ticker';
     }
@@ -376,7 +376,7 @@ var CoinsService = (function () {
     };
     CoinsService.prototype.getCoin = function (id) {
         this.idCoin = id;
-        var url = this.urlDetails + '/' + id;
+        var url = this.urlDetails + '/' + id + '/';
         return this.http.get(url)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
@@ -399,7 +399,7 @@ var CoinsService = (function () {
 }());
 CoinsService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], CoinsService);
 
 var _a;
