@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -7,7 +7,8 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CoinsService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
+  // private headers = new Headers({ 'Content-Type': 'application/json' });
+
   urlBase = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
   urlDetails = 'https://api.coinmarketcap.com/v1/ticker';
   idCoin: any;
@@ -32,8 +33,9 @@ So we will have our data updated in real time */
   }
 
   getCoin(id: string) {
+
     this.idCoin = id;
-    const url = this.urlDetails + '/' + id;
+    const url = this.urlDetails + '/' + id + '/';
     return this.http.get(url)
     .map(response => response.json())
     .catch(this.handleError);
