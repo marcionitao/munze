@@ -36,7 +36,7 @@ So we will have our data updated in real time */
 
     this.idCoin = id;
     const url = this.urlDetails + '/' + id + '/';
-    return this.http.get(url + '/')
+    return this.http.get(url)
     .map(response => response.json())
     .catch(this.handleError);
   }
