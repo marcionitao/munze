@@ -53,9 +53,12 @@
 }
 
 .card-header {
-  text-align: center;
+ /* text-align: left;*/
   background-color: transparent;
   padding: 5px;
+  color: white;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
 }
 
 .card-text {
@@ -73,13 +76,6 @@ a {
 
 .col-8 {
   text-align: center;
-}
-
-#title {
-  color: white;
-  font-family: 'Questrial', sans-serif;
-  font-size: 18px;
-  margin-bottom: 3px!important;
 }
 
 #img-coin {
