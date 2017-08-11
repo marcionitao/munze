@@ -8,26 +8,43 @@
 
   <div class="container">
     
-    <table class="table table-responsive" style="font-size:14px">
+    <table class="table table-responsive " style="font-size:14px;">
       <thead style="color:azure">
         <tr class="default">
+          <th>#</th>
           <th>Rank</th>
           <th>Name</th>                  
-          <th>Price</th>
-          <th>Market cap usd</th>
-          <th>Available supply</th>
-          <th>Percent change 1h</th>
-          <th>Percent change 24h</th>
-          <th>Percent change 7d</th>    
+          <th class="text-right">Price</th>
+          <th class="text-right">Market Cap</th>
+          <th class="text-right">Volume(24h)</th>
+          <th class="text-right">Circulating Supply</th>
+          <th class="text-center">Change 1h</th>
+          <th class="text-center">Change 24h</th>
+          <th class="text-center">Change 7d</th>    
         </tr>
       </thead>
       <tbody>
           <tr *ngFor="let coin of coins" style="color:white">
-            <td  class="text-center">{{coin.rank}}</td>
+            <td class="text-center" *ngIf="coin.name == 'Bitcoin'" ><img src="/assets/image/coin-1.png" style="width:16px;"></td>
+            <td class="text-center" *ngIf="coin.name == 'Ethereum'" ><img src="/assets/image/coin-2.png" style="width:16px;"></td>
+            <td class="text-center" *ngIf="coin.name == 'Ripple'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/ripple.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Bitcoin Cash'" ><img src="/assets/image/coin-11.png" style="width:16px;"></td>
+            <td class="text-center" *ngIf="coin.name == 'NEM'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/nem.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Litecoin'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/litecoin.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'IOTA'" ><img src="/assets/image/coin-10.png" style="width:16px;"></td>
+            <td class="text-center" *ngIf="coin.name == 'NEO'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/neo.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Dash'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/dash.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Ethereum Classic'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/ethereum-classic.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Qtum'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/qtum.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Stratis'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/stratis.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Monero'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/monero.png"></td>
+
+            <td class="text-center">{{coin.rank}}</td>
             <td class="text-left" style="color:gold">{{coin.name}}</td>         
             <td class="text-right">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</td>           
             
             <td class="text-right">{{coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</td>
+            <td class="text-right">{{coin['24h_volume_usd'] | currency:'USD':true:'1.0-2'}}</td>
             <td class="text-right">{{coin.available_supply | number: '1.0-2'}}</td>    
             <td  *ngIf="coin.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.percent_change_1h}}% &darr; </td>       
             <td  *ngIf="coin.percent_change_1h > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_1h}}% &uarr; </td>
