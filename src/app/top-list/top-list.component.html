@@ -52,7 +52,7 @@
             <td  *ngIf="coin.percent_change_24h < '0'"style="color:red" class="text-center"> {{coin.percent_change_24h}}% &darr; </td>
             <td  *ngIf="coin.percent_change_24h > '0'"style="color:greenyellow" class="text-center"> {{coin.percent_change_24h}}% &uarr; </td>
             <td  *ngIf="coin.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.percent_change_7d}}% &darr; </td>
-            <td  *ngIf="coin.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_7d}}}% &uarr; </td>
+            <td  *ngIf="coin.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_7d}}% &uarr; </td>
             <td class="text-center" style="color:goldenrod">{{ coin.last_updated * 1000 | date :'HH:mm:ss'  }}</td>
           </tr>
       </tbody>
