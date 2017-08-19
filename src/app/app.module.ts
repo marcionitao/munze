@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {TimeAgoPipe} from 'time-ago-pipe';
 import { AppComponent } from './app.component';
 import { CoinsComponent } from './coins/coins.component';
 import { CoinDetailsComponent } from './coin-details/coin-details.component';
@@ -17,7 +18,8 @@ import { TopListComponent } from './top-list/top-list.component';
     CoinsComponent,
     CoinDetailsComponent,
     AboutComponent,
-    TopListComponent
+    TopListComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

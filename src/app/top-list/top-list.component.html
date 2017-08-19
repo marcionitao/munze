@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let coin of coins" style="color:white">
+          <tr *ngFor="let coin of coins" style="color:white;">
             <td class="text-center" *ngIf="coin.name == 'Bitcoin'" ><img src="./assets/image/coin-1.png" style="width:16px;"></td>
             <td class="text-center" *ngIf="coin.name == 'Ethereum'" ><img src="./assets/image/coin-2.png" style="width:16px;"></td>
             <td class="text-center" *ngIf="coin.name == 'Ripple'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/ripple.png"></td>
@@ -40,8 +40,8 @@
             <td class="text-center" *ngIf="coin.name == 'Stratis'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/stratis.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Monero'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/monero.png"></td>
 
-            <td class="text-center">{{coin.rank}}</td>
-            <td class="text-left" style="color:gold">{{coin.name}}</td>         
+            <td class="text-center" >{{coin.rank}}</td>
+            <td class="text-left" style="color:gold"><a (click)="coinDetails(coin.id)">{{coin.name}}</a></td>         
             <td class="text-right">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</td>           
             
             <td class="text-right">{{coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</td>
@@ -53,7 +53,7 @@
             <td  *ngIf="coin.percent_change_24h > '0'"style="color:greenyellow" class="text-center"> {{coin.percent_change_24h}}% &uarr; </td>
             <td  *ngIf="coin.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.percent_change_7d}}% &darr; </td>
             <td  *ngIf="coin.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_7d}}% &uarr; </td>
-            <td class="text-center" style="color:goldenrod">{{ coin.last_updated * 1000 | date :'HH:mm:ss'  }}</td>
+            <td class="text-center" style="color:goldenrod; font-size:12px">{{ coin.last_updated * 1000 | timeAgo }}</td>
           </tr>
       </tbody>
     </table>
