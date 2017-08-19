@@ -19,7 +19,7 @@ webpackEmptyContext.id = 148;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(159);
@@ -28,7 +28,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])()
     .bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
@@ -41,7 +41,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,7 +57,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__(220),
         styles: [__webpack_require__(215)]
@@ -74,16 +74,18 @@ AppComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routing_routing_module__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_coins_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_coins_service__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__coins_coins_component__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__coin_details_coin_details_component__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__about_about_component__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__top_list_top_list_component__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_time_ago_pipe__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_time_ago_pipe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_time_ago_pipe__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__coins_coins_component__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__coin_details_coin_details_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__about_about_component__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__top_list_top_list_component__ = __webpack_require__(94);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -103,19 +105,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__coins_coins_component__["a" /* CoinsComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__coin_details_coin_details_component__["a" /* CoinDetailsComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__about_about_component__["a" /* AboutComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__top_list_top_list_component__["a" /* TopListComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__coins_coins_component__["a" /* CoinsComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__coin_details_coin_details_component__["a" /* CoinDetailsComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__about_about_component__["a" /* AboutComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__top_list_top_list_component__["a" /* TopListComponent */],
+            __WEBPACK_IMPORTED_MODULE_7_time_ago_pipe__["TimeAgoPipe"]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
@@ -125,7 +129,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__routing_routing_module__["a" /* RoutingModule */],
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_2__service_coins_service__["a" /* CoinsService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -141,9 +145,9 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about_component__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__coin_details_coin_details_component__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__coins_coins_component__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(45);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -172,7 +176,7 @@ var RoutingModule = (function () {
     return RoutingModule;
 }());
 RoutingModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_5__angular_common__["a" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */].forRoot(routes)
@@ -278,7 +282,7 @@ exports = module.exports = __webpack_require__(23)(false);
 
 
 // module
-exports.push([module.i, "#head {\r\n  margin-top: 30px;\r\n}\r\n\r\n.carousel-control-prev {\r\n  width: 3%;\r\n   background-color: rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n#back {\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "#head {\r\n  margin-top: 30px;\r\n}\r\n\r\n.carousel-control-prev {\r\n  width: 3%;\r\n   background-color: rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n#back {\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n\r\ntd {\r\n  border-bottom: 1px solid  rgba(255, 255, 255, 0.1);\r\n}\r\n\r\na {\r\n  cursor: pointer;\r\n  cursor: hand;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -319,15 +323,15 @@ module.exports = "<div id=\"head\">\n\n  <div class=\"card-columns\">\n\n    <di
 /***/ 223:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"head\">\n  <div id=\"back\">\n    <a class=\"carousel-control-prev\" [routerLink]=\"['/home']\" role=\"button\" data-slide=\"prev\">\n    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  </div>\n\n  <div class=\"container\">\n    \n    <table class=\"table table-responsive \" style=\"font-size:14px;\">\n      <thead style=\"color:azure\">\n        <tr class=\"default\">\n          <th>#</th>\n          <th>Rank</th>\n          <th>Name</th>                  \n          <th class=\"text-right\">Price</th>\n          <th class=\"text-right\">Market Cap</th>\n          <th class=\"text-right\">Volume(24h)</th>\n          <th class=\"text-right\">Circulating Supply</th>\n          <th class=\"text-center\">Change 1h</th>\n          <th class=\"text-center\">Change 24h</th>\n          <th class=\"text-center\">Change 7d</th>    \n          <th class=\"text-center\">Update Time</th>  \n        </tr>\n      </thead>\n      <tbody>\n          <tr *ngFor=\"let coin of coins\" style=\"color:white\">\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Bitcoin'\" ><img src=\"./assets/image/coin-1.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Ethereum'\" ><img src=\"./assets/image/coin-2.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Ripple'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/ripple.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Bitcoin Cash'\" ><img src=\"./assets/image/coin-11.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'NEM'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/nem.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Litecoin'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/litecoin.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'IOTA'\" ><img src=\"./assets/image/coin-10.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'NEO'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/neo.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Dash'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/dash.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Ethereum Classic'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/ethereum-classic.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Qtum'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/qtum.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Stratis'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/stratis.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Monero'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/monero.png\"></td>\n\n            <td class=\"text-center\">{{coin.rank}}</td>\n            <td class=\"text-left\" style=\"color:gold\">{{coin.name}}</td>         \n            <td class=\"text-right\">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</td>           \n            \n            <td class=\"text-right\">{{coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</td>\n            <td class=\"text-right\">{{coin['24h_volume_usd'] | currency:'USD':true:'1.0-2'}}</td>\n            <td class=\"text-right\">{{coin.available_supply | number: '1.0-2'}}</td>    \n            <td  *ngIf=\"coin.percent_change_1h < '0'\" style=\"color:red\" class=\"text-center\">{{coin.percent_change_1h}}% &darr; </td>       \n            <td  *ngIf=\"coin.percent_change_1h > '0'\" style=\"color:greenyellow\" class=\"text-center\"> {{coin.percent_change_1h}}% &uarr; </td>\n            <td  *ngIf=\"coin.percent_change_24h < '0'\"style=\"color:red\" class=\"text-center\"> {{coin.percent_change_24h}}% &darr; </td>\n            <td  *ngIf=\"coin.percent_change_24h > '0'\"style=\"color:greenyellow\" class=\"text-center\"> {{coin.percent_change_24h}}% &uarr; </td>\n            <td  *ngIf=\"coin.percent_change_7d < '0'\" style=\"color:red\" class=\"text-center\"> {{coin.percent_change_7d}}% &darr; </td>\n            <td  *ngIf=\"coin.percent_change_7d > '0'\" style=\"color:greenyellow\" class=\"text-center\"> {{coin.percent_change_7d}}% &uarr; </td>\n            <td class=\"text-center\" style=\"color:goldenrod\">{{ coin.last_updated * 1000 | date :'HH:mm:ss'  }}</td>\n          </tr>\n      </tbody>\n    </table>\n\n  </div>\n  \n</div>\n"
+module.exports = "<div id=\"head\">\n  <div id=\"back\">\n    <a class=\"carousel-control-prev\" [routerLink]=\"['/home']\" role=\"button\" data-slide=\"prev\">\n    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  </div>\n\n  <div class=\"container\">\n    \n    <table class=\"table table-responsive \" style=\"font-size:14px;\">\n      <thead style=\"color:azure\">\n        <tr class=\"default\">\n          <th>#</th>\n          <th>Rank</th>\n          <th>Name</th>                  \n          <th class=\"text-right\">Price</th>\n          <th class=\"text-right\">Market Cap</th>\n          <th class=\"text-right\">Volume(24h)</th>\n          <th class=\"text-right\">Circulating Supply</th>\n          <th class=\"text-center\">Change 1h</th>\n          <th class=\"text-center\">Change 24h</th>\n          <th class=\"text-center\">Change 7d</th>    \n          <th class=\"text-center\">Update Time</th>  \n        </tr>\n      </thead>\n      <tbody>\n          <tr *ngFor=\"let coin of coins\" style=\"color:white;\">\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Bitcoin'\" ><img src=\"./assets/image/coin-1.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Ethereum'\" ><img src=\"./assets/image/coin-2.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Ripple'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/ripple.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Bitcoin Cash'\" ><img src=\"./assets/image/coin-11.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'NEM'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/nem.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Litecoin'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/litecoin.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'IOTA'\" ><img src=\"./assets/image/coin-10.png\" style=\"width:16px;\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'NEO'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/neo.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Dash'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/dash.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Ethereum Classic'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/ethereum-classic.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Qtum'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/qtum.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Stratis'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/stratis.png\"></td>\n            <td class=\"text-center\" *ngIf=\"coin.name == 'Monero'\" ><img src=\"https://files.coinmarketcap.com/static/img/coins/16x16/monero.png\"></td>\n\n            <td class=\"text-center\" >{{coin.rank}}</td>\n            <td class=\"text-left\" style=\"color:gold\"><a (click)=\"coinDetails(coin.id)\">{{coin.name}}</a></td>         \n            <td class=\"text-right\">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</td>           \n            \n            <td class=\"text-right\">{{coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</td>\n            <td class=\"text-right\">{{coin['24h_volume_usd'] | currency:'USD':true:'1.0-2'}}</td>\n            <td class=\"text-right\">{{coin.available_supply | number: '1.0-2'}}</td>    \n            <td  *ngIf=\"coin.percent_change_1h < '0'\" style=\"color:red\" class=\"text-center\">{{coin.percent_change_1h}}% &darr; </td>       \n            <td  *ngIf=\"coin.percent_change_1h > '0'\" style=\"color:greenyellow\" class=\"text-center\"> {{coin.percent_change_1h}}% &uarr; </td>\n            <td  *ngIf=\"coin.percent_change_24h < '0'\"style=\"color:red\" class=\"text-center\"> {{coin.percent_change_24h}}% &darr; </td>\n            <td  *ngIf=\"coin.percent_change_24h > '0'\"style=\"color:greenyellow\" class=\"text-center\"> {{coin.percent_change_24h}}% &uarr; </td>\n            <td  *ngIf=\"coin.percent_change_7d < '0'\" style=\"color:red\" class=\"text-center\"> {{coin.percent_change_7d}}% &darr; </td>\n            <td  *ngIf=\"coin.percent_change_7d > '0'\" style=\"color:greenyellow\" class=\"text-center\"> {{coin.percent_change_7d}}% &uarr; </td>\n            <td class=\"text-center\" style=\"color:goldenrod; font-size:12px\">{{ coin.last_updated * 1000 | timeAgo }}</td>\n          </tr>\n      </tbody>\n    </table>\n\n  </div>\n  \n</div>\n"
 
 /***/ }),
 
-/***/ 45:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
@@ -398,7 +402,7 @@ var CoinsService = (function () {
     return CoinsService;
 }());
 CoinsService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], CoinsService);
 
@@ -407,7 +411,7 @@ var _a;
 
 /***/ }),
 
-/***/ 489:
+/***/ 490:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(149);
@@ -419,7 +423,7 @@ module.exports = __webpack_require__(149);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -439,7 +443,7 @@ var AboutComponent = (function () {
     return AboutComponent;
 }());
 AboutComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-about',
         template: __webpack_require__(219),
         styles: [__webpack_require__(214)]
@@ -455,9 +459,9 @@ AboutComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_coins_service__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_coins_service__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CoinDetailsComponent; });
@@ -499,12 +503,12 @@ var CoinDetailsComponent = (function () {
     return CoinDetailsComponent;
 }());
 CoinDetailsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-coin-details',
         template: __webpack_require__(221),
         styles: [__webpack_require__(216)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */]) === "function" && _b || Object])
 ], CoinDetailsComponent);
 
 var _a, _b;
@@ -516,9 +520,9 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_coins_service__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_coins_service__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(45);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CoinsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -554,12 +558,12 @@ var CoinsComponent = (function () {
     return CoinsComponent;
 }());
 CoinsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-coins',
         template: __webpack_require__(222),
         styles: [__webpack_require__(217)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], CoinsComponent);
 
 var _a, _b;
@@ -571,8 +575,9 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_coins_service__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_coins_service__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(45);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -585,9 +590,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var TopListComponent = (function () {
-    function TopListComponent(coinsService) {
+    function TopListComponent(coinsService, router) {
         this.coinsService = coinsService;
+        this.router = router;
     }
     TopListComponent.prototype.ngOnInit = function () {
         this.getCoins();
@@ -597,21 +604,24 @@ var TopListComponent = (function () {
         this.coinsService.getCoins()
             .subscribe(function (coin) { _this.coins = coin; console.log(coin); });
     };
+    TopListComponent.prototype.coinDetails = function (id) {
+        this.router.navigate(['/selected', id]);
+    };
     return TopListComponent;
 }());
 TopListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-top-list',
         template: __webpack_require__(223),
         styles: [__webpack_require__(218)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__service_coins_service__["a" /* CoinsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], TopListComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=top-list.component.js.map
 
 /***/ })
 
-},[489]);
+},[490]);
 //# sourceMappingURL=main.bundle.js.map
