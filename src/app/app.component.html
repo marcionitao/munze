@@ -1,17 +1,23 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="head">
+<nav class="navbar navbar-toggleable-md navbar-inverse" id="head">
+  
+    <a class="navbar-brand" [routerLink]="['/home']">
+      <img src="./assets/image/logo_2.png" id="img">
+      <span id="title">CryptoMünze</span>
+   </a>
 
-  <a class="navbar-brand" [routerLink]="['/home']">
-     <img src="./assets/image/logo_2.png" id="img">
-     <span id="title">CryptoMünze</span>
-  </a>
+   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
 
-
-  <div class="collapse navbar-collapse justify-content-end">
-
-    <div class="nav navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['/toplist']" id="about" style="color:white;">Top 10 List</a>
-        <a class="nav-item nav-link" [routerLink]="['/about']" id="about">What is this?</a>
-    </div>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+           <a class="nav-item nav-link" [routerLink]="['/toplist']" id="about" style="color:white;">Top 10 List</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-item nav-link" [routerLink]="['/about']" id="about">What is this?</a>
+        </li>
+    </ul>
   </div>
 
 </nav>

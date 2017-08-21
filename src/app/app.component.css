@@ -7,7 +7,6 @@
 #img {
   vertical-align: middle;
   width: 50px;
-  margin-left: 30px;
 }
 
 #title {
@@ -30,5 +29,47 @@ a {
 }
 
 .navbar-brand {
-  margin-left: 30px;
+  margin-left: 35px;
 }
+
+.navbar {
+  width:100%;
+  padding: 0;
+  background:none !important;
+}
+
+.navbar-toggler {
+  cursor:pointer;
+  outline:0;
+}
+
+.nav-link {
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+.nav-item {
+  padding: 0 1rem;
+}
+
+@media(max-width: 34em) {
+  .navbar-brand {
+    margin-left: 5px;
+  }
+}
+
+@media(max-width: 34em) {
+  .nav-item {
+     padding: 0;
+  }
+}
+
+@media(max-width: 34em) {
+  .nav-link {
+    margin-top: 10px;
+    font-weight:normal;
+    color:#fff !important;
+  }
+}
+
+
