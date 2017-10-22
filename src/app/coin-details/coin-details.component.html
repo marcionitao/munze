@@ -43,6 +43,7 @@
             <img *ngIf="coin.name == 'Bitcoin Cash'" src="./assets/image/coin-11.png" id="img-coin">
             <img *ngIf="coin.name == 'NEO'" src="https://files.coinmarketcap.com/static/img/coins/128x128/neo.png" id="img-coin">
             <img *ngIf="coin.name == 'qtum'" src="https://files.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
+            <img *ngIf="coin.name == 'BitConnect'" src="https://files.coinmarketcap.com/static/img/coins/128x128/bitconnect.png" id="img-coin">
             <img *ngIf="(coin.name !== 'Bitcoin Cash') 
                 && (coin.name !== 'Bitcoin') 
                 && (coin.name !== 'Ethereum')
@@ -55,6 +56,7 @@
                 && (coin.name !== 'Ripple')
                 && (coin.name !== 'NEO')
                 && (coin.name !== 'Qtum')
+                && (coin.name !== 'BitConnect')
                 && (coin.name !== 'IOTA')" src="./assets/image/error.png" id="img-coin">
             <br>
             <span id="rank"> Rank {{ coin.rank }} </span>
@@ -118,10 +120,16 @@
               types of digital assets as well as allow users to establish smart contracts to enhance and enrich the functions of 
               said digital assets.
             </p>
-              <p *ngIf="coin.name == 'Qtum'" class="card-text">
+            <p *ngIf="coin.name == 'Qtum'" class="card-text">
               Qtum is an open source Proof of Stake (PoS) blockchain application platform. Qtum’s core technology combines a fork of 
               Bitcoin Core, an Account Abstraction Layer allowing for multiple Virtual Machines including the Ethereum Virtual Machine 
               (EVM) and Proof-of-Stake consensus aimed at tackling industry use cases. 
+            </p>
+            <p *ngIf="coin.name == 'BitConnect'" class="card-text">
+              BitConnect is an open source all in one bitcoin and crypto community platform designed to provide multiple investment 
+              opportunities with cryptocurrency education where it is entirely possible to find the independence we all desire, in a 
+              community of like-minded, freedom loving individuals who, like you, are seeking the possibility of income stability in 
+              a very unstable world.
             </p>
           </div>
 
@@ -163,6 +171,8 @@
 
             <a *ngIf="coin.name == 'Monero'" href="https://getmonero.org/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
             <a *ngIf="coin.name == 'Monero'" href="https://github.com/monero-project"><img src="./assets/image/if_github_317712.png" id="img-footer"></a>
+
+            <a *ngIf="coin.name == 'BitConnect'" href="https://bitconnect.co/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
           </div>
 
         </div>
