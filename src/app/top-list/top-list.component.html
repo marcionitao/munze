@@ -40,6 +40,23 @@
             <td class="text-center" *ngIf="coin.name == 'Stratis'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/stratis.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Monero'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/monero.png"></td>
             <td class="text-center" *ngIf="coin.name == 'BitConnect'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/bitconnect.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Bitcoin Gold'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/bitcoin-gold.png"></td>
+            <td class="text-center" *ngIf="(coin.name !== 'Bitcoin Cash') 
+                                        && (coin.name !== 'Bitcoin') 
+                                        && (coin.name !== 'Ethereum')
+                                        && (coin.name !== 'NEM')
+                                        && (coin.name !== 'Stratis')
+                                        && (coin.name !== 'Dash')
+                                        && (coin.name !== 'Ethereum Classic')
+                                        && (coin.name !== 'Litecoin')
+                                        && (coin.name !== 'Monero')
+                                        && (coin.name !== 'Ripple')
+                                        && (coin.name !== 'NEO')
+                                        && (coin.name !== 'Qtum')
+                                        && (coin.name !== 'BitConnect')
+                                        && (coin.name !== 'Bitcoin Gold')
+                                        && (coin.name !== 'IOTA')" ><img src="./assets/image/error.png" id="img-coin">
+            </td>
 
             <td class="text-center" >{{coin.rank}}</td>
             <td class="text-left" style="color:gold"><a (click)="coinDetails(coin.id)">{{coin.name}}</a></td>         
