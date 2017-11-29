@@ -41,6 +41,7 @@
             <td class="text-center" *ngIf="coin.name == 'Monero'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/monero.png"></td>
             <td class="text-center" *ngIf="coin.name == 'BitConnect'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/bitconnect.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Bitcoin Gold'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/bitcoin-gold.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'Cardano'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/cardano.png"></td>
             <td class="text-center" *ngIf="(coin.name !== 'Bitcoin Cash') 
                                         && (coin.name !== 'Bitcoin') 
                                         && (coin.name !== 'Ethereum')
@@ -55,7 +56,8 @@
                                         && (coin.name !== 'Qtum')
                                         && (coin.name !== 'BitConnect')
                                         && (coin.name !== 'Bitcoin Gold')
-                                        && (coin.name !== 'IOTA')" ><img src="./assets/image/error.png" id="img-coin">
+                                        && (coin.name !== 'Cardano')
+                                        && (coin.name !== 'IOTA')" ><img src="./assets/image/error_2.png" id="img-coin">
             </td>
 
             <td class="text-center" >{{coin.rank}}</td>

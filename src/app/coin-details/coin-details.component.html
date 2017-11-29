@@ -44,6 +44,8 @@
             <img *ngIf="coin.name == 'NEO'" src="https://files.coinmarketcap.com/static/img/coins/128x128/neo.png" id="img-coin">
             <img *ngIf="coin.name == 'qtum'" src="https://files.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
             <img *ngIf="coin.name == 'BitConnect'" src="https://files.coinmarketcap.com/static/img/coins/128x128/bitconnect.png" id="img-coin">
+            <img *ngIf="coin.name == 'Bitcoin Gold'" src="https://files.coinmarketcap.com/static/img/coins/128x128/bitcoin-gold.png" id="img-coin">
+            <img *ngIf="coin.name == 'Cardano'" src="https://files.coinmarketcap.com/static/img/coins/128x128/cardano.png" id="img-coin">
             <img *ngIf="(coin.name !== 'Bitcoin Cash') 
                 && (coin.name !== 'Bitcoin') 
                 && (coin.name !== 'Ethereum')
@@ -57,6 +59,8 @@
                 && (coin.name !== 'NEO')
                 && (coin.name !== 'Qtum')
                 && (coin.name !== 'BitConnect')
+                && (coin.name !== 'Bitcoin Gold')
+                && (coin.name !== 'Cardano')
                 && (coin.name !== 'IOTA')" src="./assets/image/error.png" id="img-coin">
             <br>
             <span id="rank"> Rank {{ coin.rank }} </span>
@@ -130,6 +134,19 @@
               opportunities with cryptocurrency education where it is entirely possible to find the independence we all desire, in a 
               community of like-minded, freedom loving individuals who, like you, are seeking the possibility of income stability in 
               a very unstable world.
+            </p>
+            <p *ngIf="coin.name == 'Bitcoin Gold'" class="card-text">
+              Bitcoin Gold is a fork of the Bitcoin blockchain. At block 491407, Bitcoin Gold miners will begin creating blocks with 
+              a new proof-of-work algorithm, and this will cause a bifurcation of the Bitcoin blockchain. The original Bitcoin blockchain 
+              will continue on unaltered, but a new branch of the blockchain will split off from the original chain. The new branch is a 
+              distinct blockchain with the same transaction history as Bitcoin up until the fork, but then diverges from it. As a result 
+              of this process, a new cryptocurrency is born.
+            </p>
+            <p *ngIf="coin.name == 'Cardano'" class="card-text">
+              Cardano is a decentralised public blockchain and cryptocurrency project and is fully open source. Cardano is developing 
+              a smart contract platform which seeks to deliver more advanced features than any protocol previously developed. It is the 
+              first blockchain platform to evolve out of a scientific philosophy and a research-first driven approach. The development 
+              team consists of a large global collective of expert engineers and researchers
             </p>
           </div>
 
