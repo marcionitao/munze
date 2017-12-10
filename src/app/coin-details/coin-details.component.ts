@@ -26,7 +26,7 @@ export class CoinDetailsComponent implements OnInit {
 
   }
 
-  onChange(item){
+  onChange(item) {
     console.log(item);
     this.selectValue = item;
     // get convert value coin
