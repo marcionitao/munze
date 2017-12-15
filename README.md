@@ -1,4 +1,5 @@
 ![logo_2](https://user-images.githubusercontent.com/3647246/29043383-3f1e9e0c-7bbb-11e7-8bfe-a09cd72a4ccd.png)
+[![Build Status](https://travis-ci.org/marcionitao/munze.svg?branch=master)](https://travis-ci.org/marcionitao/munze)
 
 # CryptoMünze
 
