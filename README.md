@@ -1,3 +1,6 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 ![logo_2](https://user-images.githubusercontent.com/3647246/29043383-3f1e9e0c-7bbb-11e7-8bfe-a09cd72a4ccd.png)
 
 # CryptoMünze
