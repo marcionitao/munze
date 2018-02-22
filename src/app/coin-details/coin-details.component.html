@@ -41,15 +41,19 @@
             <img *ngIf="coin.name == 'Ripple'" src="./assets/image/coin-9.png" id="img-coin">
             <img *ngIf="coin.name == 'IOTA'" src="./assets/image/coin-10.png" id="img-coin">
             <img *ngIf="coin.name == 'Bitcoin Cash'" src="./assets/image/coin-11.png" id="img-coin">
-            <img *ngIf="coin.name == 'NEO'" src="https://files.coinmarketcap.com/static/img/coins/128x128/neo.png" id="img-coin">
+            <img *ngIf="coin.name == 'NEO'" src="https://files.coinmarketcap.com/static/img/coins/128x128/1376.png" id="img-coin">
             <img *ngIf="coin.name == 'qtum'" src="https://files.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
             <img *ngIf="coin.name == 'BitConnect'" src="https://files.coinmarketcap.com/static/img/coins/128x128/bitconnect.png" id="img-coin">
             <img *ngIf="coin.name == 'Bitcoin Gold'" src="https://files.coinmarketcap.com/static/img/coins/128x128/bitcoin-gold.png" id="img-coin">
-            <img *ngIf="coin.name == 'Cardano'" src="https://files.coinmarketcap.com/static/img/coins/128x128/cardano.png" id="img-coin">
+            <img *ngIf="coin.name == 'Cardano'" src="https://files.coinmarketcap.com/static/img/coins/128x128/2010.png" id="img-coin">
+            <img *ngIf="coin.name == 'Stellar'" src="https://files.coinmarketcap.com/static/img/coins/128x128/512.png" id="img-coin">
+            <img *ngIf="coin.name == 'EOS'" src="https://files.coinmarketcap.com/static/img/coins/128x128/1765.png" id="img-coin">
             <img *ngIf="(coin.name !== 'Bitcoin Cash') 
                 && (coin.name !== 'Bitcoin') 
                 && (coin.name !== 'Ethereum')
                 && (coin.name !== 'NEM')
+                && (coin.name !== 'Stellar')
+                && (coin.name !== 'EOS')
                 && (coin.name !== 'Stratis')
                 && (coin.name !== 'Dash')
                 && (coin.name !== 'Ethereum Classic')
@@ -148,6 +152,13 @@
               first blockchain platform to evolve out of a scientific philosophy and a research-first driven approach. The development 
               team consists of a large global collective of expert engineers and researchers
             </p>
+            <p *ngIf="coin.name == 'Stellar'" class="card-text">
+              Stellar is a platform that connects banks, payments systems, and people. Integrate to move money quickly, reliably, and 
+              at almost no cost.
+            </p>
+            <p *ngIf="coin.name == 'EOS'" class="card-text">
+              The EOS.IO Testnet has arrived. Scalable decentralized applications can now be built and tested in a public environment.
+            </p>
           </div>
 
           <div class="card-block">
@@ -190,6 +201,13 @@
             <a *ngIf="coin.name == 'Monero'" href="https://github.com/monero-project"><img src="./assets/image/if_github_317712.png" id="img-footer"></a>
 
             <a *ngIf="coin.name == 'BitConnect'" href="https://bitconnect.co/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
+
+            <a *ngIf="coin.name == 'Stellar'" href="https://www.stellar.org/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
+
+            <a *ngIf="coin.name == 'EOS'" href="https://medium.com/eosio/eos-io-dawn-2-0-released-development-update-c19348eac3c7"><img src="./assets/image/if_document_2318462.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'EOS'" href="https://eos.io/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
+            <a *ngIf="coin.name == 'EOS'" href="https://github.com/eosio"><img src="./assets/image/if_github_317712.png" id="img-footer"></a>
+
           </div>
 
         </div>
