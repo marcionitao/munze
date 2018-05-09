@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/operator/catch';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class CoinsService {
@@ -13,7 +15,7 @@ export class CoinsService {
   urlDetails = 'https://api.coinmarketcap.com/v1/ticker';
   idCoin: any;
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 /*
   getCoins() {
     return this.http.get(this.urlBase)
@@ -28,8 +30,10 @@ So we will have our data updated in real time */
   return Observable
     .timer(0, 5000)
     .flatMap(() =>  this.http.get(this.urlBase))
-    .map(res => res.json())
-    .catch(this.handleError);
+    .pipe(
+      map(res => res), // or any other operator
+      catchError(this.handleError)
+    )
   }
 
   getCoin(id: string) {
@@ -37,15 +41,19 @@ So we will have our data updated in real time */
     this.idCoin = id;
     const url = this.urlDetails + '/' + id + '/';
     return this.http.get(url)
-    .map(response => response.json())
-    .catch(this.handleError);
+    .pipe(
+      map(response => response),
+      catchError(this.handleError)
+    )
   }
 
   getCurrency(currency) {
     const url = this.urlDetails + '/' + this.idCoin + '/?convert=' + currency;
     return this.http.get(url)
-    .map(response => response.json())
-    .catch(this.handleError);
+    .pipe(
+      map(response => response),
+      catchError(this.handleError)
+    )
   }
 
   // method of test

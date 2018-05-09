@@ -4,7 +4,9 @@ import { CoinsService } from './service/coins.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
+
+import { HttpClientModule } from '@angular/common/http'
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { AppComponent } from './app.component';
 import { CoinsComponent } from './coins/coins.component';
@@ -26,7 +28,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RoutingModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     CommonModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

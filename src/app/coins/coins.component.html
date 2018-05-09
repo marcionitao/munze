@@ -54,7 +54,7 @@
             </div>
 
             <div class="col-8">
-              <p class="card-text">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</p>
+              <p class="card-text">{{coin.price_usd | currency:'USD':code:'1.2-2'}}</p>
               <p id="_24h" *ngIf="coin.percent_change_24h < '0'" style="color:red">{{coin.percent_change_24h}}% &darr;</p>
               <p id="_24h" *ngIf="coin.percent_change_24h > '0'" style="color:greenyellow">{{coin.percent_change_24h}}% &uarr;</p>
              

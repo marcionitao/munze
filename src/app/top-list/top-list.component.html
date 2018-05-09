@@ -66,10 +66,10 @@
 
             <td class="text-center" >{{coin.rank}}</td>
             <td class="text-left" style="color:gold"><a (click)="coinDetails(coin.id)">{{coin.name}}</a></td>         
-            <td class="text-right">{{coin.price_usd | currency:'USD':true:'1.2-2'}}</td>           
+            <td class="text-right">{{coin.price_usd | currency:'USD':code:'1.2-2'}}</td>           
             
-            <td class="text-right">{{coin.market_cap_usd | currency:'USD':true:'1.0-2'}}</td>
-            <td class="text-right">{{coin['24h_volume_usd'] | currency:'USD':true:'1.0-2'}}</td>
+            <td class="text-right">{{coin.market_cap_usd | currency:'USD':code:'1.0-2'}}</td>
+            <td class="text-right">{{coin['24h_volume_usd'] | currency:'USD':code:'1.0-2'}}</td>
             <td class="text-right">{{coin.available_supply | number: '1.0-2'}}</td>    
             <td  *ngIf="coin.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.percent_change_1h}}% &darr; </td>       
             <td  *ngIf="coin.percent_change_1h > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_1h}}% &uarr; </td>
