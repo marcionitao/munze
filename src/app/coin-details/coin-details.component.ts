@@ -15,15 +15,28 @@ export class CoinDetailsComponent implements OnInit {
 
   selectValue = 'USD';
   currency: any = ['USD', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB'];
-  coins: Coins[];
+  coins: Coins[] = [];
 
   constructor(private route: ActivatedRoute, private coinsService: CoinsService) { }
 
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.coinsService.getCoin(params['id']))
-      .subscribe(coin => { this.coins = coin; } );
+      .subscribe(
+        // this converte to json object to array
+        data => {
+          this.coins = [];
+          Object.keys(data)
+            .map(
+              (key) => {
+                this.coins.push(data[key])
+              }
 
+            );
+          // item removed of array
+          this.coins.splice(1);
+
+        })
   }
 
   onChange(item) {
@@ -31,21 +44,22 @@ export class CoinDetailsComponent implements OnInit {
     this.selectValue = item;
     // get convert value coin
     this.coinsService.getCurrency(item)
-    .subscribe(coin => { this.coins = coin; console.log(this.coins )} );
+      .subscribe(
+
+        // this converte to json object to array
+        data => {
+          this.coins = [];
+          Object.keys(data)
+            .map(
+              (key) => {
+                this.coins.push(data[key])
+              }
+
+            );
+          // item removed of array
+          this.coins.splice(1);
+        }
+      );
   }
 
-
-  /*
-  ngOnInit() {
-
-       this.route.params
-       .map(params => params['id'])
-       .subscribe((id) => {
-         this.coinsService.getCoin(id)
-         .subscribe(coin => {
-           this.coins = coin; console.log('coin:' + this.coins);
-         });
-      });
-    }
-    */
 }

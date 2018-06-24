@@ -11,8 +11,9 @@ export class CoinsService {
 
   // private headers = new Headers({ 'Content-Type': 'application/json' });
 
-  urlBase = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
-  urlDetails = 'https://api.coinmarketcap.com/v1/ticker';
+  urlBase_v1 = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
+  urlBase_v2 = 'https://api.coinmarketcap.com/v2/ticker/?limit=10';
+  urlDetails = 'https://api.coinmarketcap.com/v2/ticker';
   idCoin: any;
 
   constructor(private http: HttpClient) { }
@@ -26,32 +27,37 @@ export class CoinsService {
 
 /* It will do GET request in server API location in 5000 mileseconds.
 So we will have our data updated in real time */
+  
+// Public API V2 CoinMarketCap
   getCoins() {
-  return Observable
+  
+    return Observable
     .timer(0, 5000)
-    .flatMap(() =>  this.http.get(this.urlBase))
+    .flatMap(() =>  this.http.get(this.urlBase_v2))
     .pipe(
-      map(res => res), // or any other operator
+      map(res => res['data']),
       catchError(this.handleError)
     )
   }
 
-  getCoin(id: string) {
+  getCoin(id: any) {
 
     this.idCoin = id;
     const url = this.urlDetails + '/' + id + '/';
+   
     return this.http.get(url)
     .pipe(
-      map(response => response),
+      map(res => res),
       catchError(this.handleError)
     )
   }
 
   getCurrency(currency) {
     const url = this.urlDetails + '/' + this.idCoin + '/?convert=' + currency;
+   
     return this.http.get(url)
     .pipe(
-      map(response => response),
+      map(res => res),
       catchError(this.handleError)
     )
   }

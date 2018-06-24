@@ -19,12 +19,26 @@ export class TopListComponent implements OnInit {
   }
 
   getCoins() {
-   this.coinsService.getCoins()
-   .subscribe(coin => {this.coins = coin; console.log(coin) });
-  }
+    this.coinsService.getCoins()
+      .subscribe(
+        /*coin => {
+        this.coins = coin; console.log(coin)
+        }*/
 
-  coinDetails(id: string): void {
-    this.router.navigate(['/selected', id]);
+        // this converte to json object to array
+        data => {
+          this.coins = [];
+          Object.keys(data)
+          .map(
+            (key) => { 
+              this.coins.push(data[key])
+            }
+          ); 
+          // To order by Rank
+          console.log( );  
+          this.coins.sort( (a, b) => a.rank - b.rank) ;  
+        }
+      );
   }
 
 }

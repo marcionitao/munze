@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class CoinsComponent implements OnInit {
 
-  coins: Coins[];
+  coins: Coins[] = [];
   // selectedCoin: Coins;
 
   constructor(private coinsService: CoinsService, private router: Router) { }
@@ -26,14 +26,28 @@ export class CoinsComponent implements OnInit {
 
   getCoins() {
     this.coinsService.getCoins().subscribe(
-      data => {
-        this.coins = data;
-        // console.log(data);
-      });
-  }
 
-  coinDetails(id: string): void {
-    this.router.navigate(['/selected', id]);
+      /*   Public API V1 CoinMarketCap
+       data => {
+          this.coins = data;
+          // console.log(data);
+        });*/
+
+      //  Public API V2 CoinMarketCap
+      // this converte to json object to array
+      data => {
+        this.coins = [];
+        Object.keys(data)
+        .map(
+          (key) => { 
+            this.coins.push(data[key])
+          }
+        ); 
+        // To order by Rank
+        console.log( );  
+        this.coins.sort( (a, b) => a.rank - b.rank) ;  
+      }
+    );
   }
 
 }

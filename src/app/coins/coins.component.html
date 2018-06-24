@@ -4,7 +4,8 @@
 
     <div class="card card-inverse" *ngFor="let coin of coins">
 
-      <a (click)="coinDetails(coin.id)">
+      <!--<a (click)="coinDetails(coin.id)">-->
+      <a [routerLink]="['/selected', coin.id]" style="text-decoration:none">
         
         <div class="card-header">
           <span>{{coin.name}}</span>
@@ -27,6 +28,7 @@
               <img *ngIf="coin.name == 'IOTA'"  src="./assets/image/coin-10.png" id="img-coin">
               <img *ngIf="coin.name == 'Bitcoin Cash'"  src="./assets/image/coin-11.png" id="img-coin">
               <img *ngIf="coin.name == 'NEO'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/1376.png" id="img-coin">
+              <img *ngIf="coin.name == 'TRON'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png" id="img-coin">
               <img *ngIf="coin.name == 'Qtum'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
               <img *ngIf="coin.name == 'BitConnect'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/bitconnect.png" id="img-coin">
               <img *ngIf="coin.name == 'Bitcoin Gold'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/bitcoin-gold.png" id="img-coin">
@@ -46,6 +48,7 @@
                 && (coin.name !== 'Monero')
                 && (coin.name !== 'Ripple')
                 && (coin.name !== 'NEO')
+                && (coin.name !== 'TRON')
                 && (coin.name !== 'Qtum')
                 && (coin.name !== 'BitConnect')
                 && (coin.name !== 'Bitcoin Gold')
@@ -54,9 +57,9 @@
             </div>
 
             <div class="col-8">
-              <p class="card-text">{{coin.price_usd | currency:'USD':code:'1.2-2'}}</p>
-              <p id="_24h" *ngIf="coin.percent_change_24h < '0'" style="color:red">{{coin.percent_change_24h}}% &darr;</p>
-              <p id="_24h" *ngIf="coin.percent_change_24h > '0'" style="color:greenyellow">{{coin.percent_change_24h}}% &uarr;</p>
+              <p class="card-text">{{coin.quotes.USD.price | currency:'USD':code:'1.2-2'}}</p>
+              <p id="_24h" *ngIf="coin.quotes.USD.percent_change_24h < '0'" style="color:red">{{coin.quotes.USD.percent_change_24h}}% &darr;</p>
+              <p id="_24h" *ngIf="coin.quotes.USD.percent_change_24h > '0'" style="color:greenyellow">{{coin.quotes.USD.percent_change_24h}}% &uarr;</p>
              
             </div>
           </div>

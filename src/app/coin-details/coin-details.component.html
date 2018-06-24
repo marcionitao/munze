@@ -42,6 +42,7 @@
             <img *ngIf="coin.name == 'IOTA'" src="./assets/image/coin-10.png" id="img-coin">
             <img *ngIf="coin.name == 'Bitcoin Cash'" src="./assets/image/coin-11.png" id="img-coin">
             <img *ngIf="coin.name == 'NEO'" src="https://s2.coinmarketcap.com/static/img/coins/128x128/1376.png" id="img-coin">
+            <img *ngIf="coin.name == 'TRON'" src="https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png" id="img-coin">
             <img *ngIf="coin.name == 'qtum'" src="https://s2.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
             <img *ngIf="coin.name == 'BitConnect'" src="https://s2.coinmarketcap.com/static/img/coins/128x128/bitconnect.png" id="img-coin">
             <img *ngIf="coin.name == 'Bitcoin Gold'" src="https://s2.coinmarketcap.com/static/img/coins/128x128/bitcoin-gold.png" id="img-coin">
@@ -60,6 +61,7 @@
                 && (coin.name !== 'Litecoin')
                 && (coin.name !== 'Monero')
                 && (coin.name !== 'Ripple')
+                && (coin.name !== 'TRON')
                 && (coin.name !== 'NEO')
                 && (coin.name !== 'Qtum')
                 && (coin.name !== 'BitConnect')
@@ -99,6 +101,9 @@
               its proof-of-importance (POI) algorithm, encrypted messaging system, multisignature accounts and Eigentrust++
               reputation system.
             </p>
+            <p *ngIf="coin.name == 'TRON'" class="card-text">
+                TRON is one of the largest blockchain-based operating systems in the world.
+              </p>
             <p *ngIf="coin.name == 'Ethereum Classic'" class="card-text">
               An open-source, blockchain-based computing platform that came into existence as a result of the DAO hard-fork. Identical
               to Ethereum up to a certain block (block 1920000), Ethereum Classic consolidated members of the Ethereum community
@@ -204,6 +209,8 @@
 
             <a *ngIf="coin.name == 'Stellar'" href="https://www.stellar.org/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
 
+            <a *ngIf="coin.name == 'TRON'" href="https://tron.network/index?lng=en"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
+
             <a *ngIf="coin.name == 'EOS'" href="https://medium.com/eosio/eos-io-dawn-2-0-released-development-update-c19348eac3c7"><img src="./assets/image/if_document_2318462.png" id="img-footer"></a>
             <a *ngIf="coin.name == 'EOS'" href="https://eos.io/"><img src="./assets/image/if_office-47_809586.png" id="img-footer"></a>
             <a *ngIf="coin.name == 'EOS'" href="https://github.com/eosio"><img src="./assets/image/if_github_317712.png" id="img-footer"></a>
@@ -217,64 +224,63 @@
           <div class="card-block" id="dados" style="background-color: rgba(0, 0, 0, 0.2);">
 
             <legend id="c_price">Current Price</legend>
-            <p id="price" *ngIf="selectValue == 'USD'" >{{coin.price_usd | currency:'USD':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'AUD'" >{{coin.price_aud | currency:'AUD':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'BRL'" >{{coin.price_brl | currency:'BRL':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CAD'" >{{coin.price_cad | currency:'CAD':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CHF'" >{{coin.price_chf | currency:'CHF':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CNY'" >{{coin.price_cny | currency:'CNY':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'EUR'" >{{coin.price_eur | currency:'EUR':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'GBP'" >{{coin.price_gbp | currency:'GBP':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'HKD'" >{{coin.price_hkd | currency:'HKD':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'IDR'" >{{coin.price_idr | currency:'IDR':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'INR'" >{{coin.price_inr | currency:'INR':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'JPY'" >{{coin.price_jpy | currency:'JPY':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'KRW'" >{{coin.price_krw | currency:'KRW':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'MXN'" >{{coin.price_mxn | currency:'MXN':code:'1.2-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'RUB'" >{{coin.price_rub | currency:'RUB':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'USD'" >{{coin.quotes.USD?.price | currency:'USD':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'AUD'" >{{coin.quotes.AUD?.price | currency:'AUD':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'BRL'" >{{coin.quotes.BRL?.price | currency:'BRL':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CAD'" >{{coin.quotes.CAD?.price | currency:'CAD':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CHF'" >{{coin.quotes.CHF?.price | currency:'CHF':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CNY'" >{{coin.quotes.CNY?.price | currency:'CNY':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'EUR'" >{{coin.quotes.EUR?.price | currency:'EUR':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'GBP'" >{{coin.quotes.GBP?.price | currency:'GBP':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'HKD'" >{{coin.quotes.HKD?.price | currency:'HKD':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'IDR'" >{{coin.quotes.IDR?.price | currency:'IDR':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'INR'" >{{coin.quotes.INR?.price | currency:'INR':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'JPY'" >{{coin.quotes.JPY?.price | currency:'JPY':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'KRW'" >{{coin.quotes.KRW?.price | currency:'KRW':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'MXN'" >{{coin.quotes.MXN?.price | currency:'MXN':code:'1.2-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'RUB'" >{{coin.quotes.RUB?.price | currency:'RUB':code:'1.2-2'}}</p>
 
-            <p id="_24h" *ngIf="coin.percent_change_24h < '0'" style="color:red">( {{coin.percent_change_24h}}% &darr;)</p>
-            <p id="_24h" *ngIf="coin.percent_change_24h > '0'" style="color:greenyellow">( {{coin.percent_change_24h}}% &uarr;)</p>
+            <p id="_24h" *ngIf="coin.quotes.USD.percent_change_24h < '0'" style="color:red">( {{coin.quotes.USD.percent_change_24h}}% &darr;)</p>
+            <p id="_24h" *ngIf="coin.quotes.USD.percent_change_24h > '0'" style="color:greenyellow">( {{coin.quotes.USD.percent_change_24h}}% &uarr;)</p>
             <legend id="c_price">Circulating Supply</legend>
-            <p id="price">{{ coin.available_supply | number: '1.0-2'}}</p>
+            <p id="price">{{ coin.total_supply | number: '1.0-2'}}</p>
             <p id="price" style="margin-left:8px;">{{ coin.symbol }}</p>
             
             <legend id="c_price">Volume (24h)</legend>
-            <p id="price" *ngIf="selectValue == 'USD'">{{coin['24h_volume_usd'] | currency:'USD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'AUD'">{{coin['24h_volume_aud'] | currency:'AUD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'BRL'">{{coin['24h_volume_brl'] | currency:'BRL':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CAD'">{{coin['24h_volume_cad'] | currency:'CAD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CHF'">{{coin['24h_volume_chf'] | currency:'CHF':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CNY'">{{coin['24h_volume_cny'] | currency:'CNY':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'EUR'">{{coin['24h_volume_eur'] | currency:'EUR':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'GBP'">{{coin['24h_volume_gbp'] | currency:'GBP':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'HKD'">{{coin['24h_volume_hkd'] | currency:'HKD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'IDR'">{{coin['24h_volume_idr'] | currency:'IDR':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'INR'">{{coin['24h_volume_inr'] | currency:'INR':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'JPY'">{{coin['24h_volume_jpy'] | currency:'JPY':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'KRW'">{{coin['24h_volume_krw'] | currency:'KRW':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'MXN'">{{coin['24h_volume_mxn'] | currency:'MXN':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'RUB'">{{coin['24h_volume_rub'] | currency:'RUB':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'USD'">{{coin.quotes.USD?.volume_24h | currency:'USD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'AUD'">{{coin.quotes.AUD?.volume_24h | currency:'AUD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'BRL'">{{coin.quotes.BRL?.volume_24h | currency:'BRL':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CAD'">{{coin.quotes.CAD?.volume_24h | currency:'CAD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CHF'">{{coin.quotes.CHF?.volume_24h | currency:'CHF':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CNY'">{{coin.quotes.CNY?.volume_24h | currency:'CNY':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'EUR'">{{coin.quotes.EUR?.volume_24h | currency:'EUR':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'GBP'">{{coin.quotes.GBP?.volume_24h | currency:'GBP':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'HKD'">{{coin.quotes.HKD?.volume_24h | currency:'HKD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'IDR'">{{coin.quotes.IDR?.volume_24h | currency:'IDR':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'INR'">{{coin.quotes.INR?.volume_24h | currency:'INR':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'JPY'">{{coin.quotes.JPY?.volume_24h | currency:'JPY':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'KRW'">{{coin.quotes.KRW?.volume_24h | currency:'KRW':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'MXN'">{{coin.quotes.MXN?.volume_24h | currency:'MXN':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'RUB'">{{coin.quotes.RUB?.volume_24h | currency:'RUB':code:'1.0-2'}}</p>
            
 
             <legend id="c_price">Market Cap</legend>           
-            <p id="price" *ngIf="selectValue == 'USD'">{{ coin.market_cap_usd | currency:'USD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'AUD'">{{ coin.market_cap_aud | currency:'AUD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'BRL'">{{ coin.market_cap_brl | currency:'BRL':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CAD'">{{ coin.market_cap_cad | currency:'CAD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CHF'">{{ coin.market_cap_chf | currency:'CHF':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'CNY'">{{ coin.market_cap_cny | currency:'CNY':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'EUR'">{{ coin.market_cap_eur | currency:'EUR':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'GBP'">{{ coin.market_cap_gbp | currency:'GBP':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'HKD'">{{ coin.market_cap_hkd | currency:'HKD':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'IDR'">{{ coin.market_cap_idr | currency:'IDR':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'INR'">{{ coin.market_cap_inr | currency:'INR':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'JPY'">{{ coin.market_cap_jpy | currency:'JPY':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'KRW'">{{ coin.market_cap_krw | currency:'KRW':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'MXN'">{{ coin.market_cap_mxn | currency:'MXN':code:'1.0-2'}}</p>
-            <p id="price" *ngIf="selectValue == 'RUB'">{{ coin.market_cap_rub | currency:'RUB':code:'1.0-2'}}</p>
-         
-         
+            <p id="price" *ngIf="selectValue == 'USD'">{{ coin.quotes.USD?.market_cap | currency:'USD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'AUD'">{{ coin.quotes.AUD?.market_cap | currency:'AUD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'BRL'">{{ coin.quotes.BRL?.market_cap | currency:'BRL':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CAD'">{{ coin.quotes.CAD?.market_cap | currency:'CAD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CHF'">{{ coin.quotes.CHF?.market_cap | currency:'CHF':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'CNY'">{{ coin.quotes.CNY?.market_cap | currency:'CNY':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'EUR'">{{ coin.quotes.EUR?.market_cap | currency:'EUR':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'GBP'">{{ coin.quotes.GBP?.market_cap | currency:'GBP':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'HKD'">{{ coin.quotes.HKD?.market_cap | currency:'HKD':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'IDR'">{{ coin.quotes.IDR?.market_cap | currency:'IDR':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'INR'">{{ coin.quotes.INR?.market_cap | currency:'INR':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'JPY'">{{ coin.quotes.JPY?.market_cap | currency:'JPY':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'KRW'">{{ coin.quotes.KRW?.market_cap | currency:'KRW':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'MXN'">{{ coin.quotes.MXN?.market_cap | currency:'MXN':code:'1.0-2'}}</p>
+            <p id="price" *ngIf="selectValue == 'RUB'">{{ coin.quotes.RUB?.market_cap | currency:'RUB':code:'1.0-2'}}</p>
+                 
           </div>
 
         </div>

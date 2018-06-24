@@ -38,6 +38,7 @@
             <td class="text-center" *ngIf="coin.name == 'Ethereum Classic'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/ethereum-classic.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Qtum'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/qtum.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Stratis'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/stratis.png"></td>
+            <td class="text-center" *ngIf="coin.name == 'TRON'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1958.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Monero'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/328.png"></td>
             <td class="text-center" *ngIf="coin.name == 'BitConnect'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/bitconnect.png"></td>
             <td class="text-center" *ngIf="coin.name == 'Bitcoin Gold'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/bitcoin-gold.png"></td>
@@ -55,6 +56,7 @@
                                         && (coin.name !== 'Monero')
                                         && (coin.name !== 'Ripple')
                                         && (coin.name !== 'NEO')
+                                        && (coin.name !== 'TRON')
                                         && (coin.name !== 'Qtum')
                                         && (coin.name !== 'BitConnect')
                                         && (coin.name !== 'Bitcoin Gold')
@@ -65,18 +67,21 @@
             </td>
 
             <td class="text-center" >{{coin.rank}}</td>
-            <td class="text-left" style="color:gold"><a (click)="coinDetails(coin.id)">{{coin.name}}</a></td>         
-            <td class="text-right">{{coin.price_usd | currency:'USD':code:'1.2-2'}}</td>           
+            <td class="text-left" style="color:gold">
+              <!--<a (click)="coinDetails(coin.id)">{{coin.name}}</a>-->
+              <a [routerLink]="['/selected', coin.id]" style="text-decoration:none">{{coin.name}}</a>
+            </td>         
+            <td class="text-right">{{coin.quotes.USD?.price | currency:'USD':code:'1.2-2'}}</td>           
             
-            <td class="text-right">{{coin.market_cap_usd | currency:'USD':code:'1.0-2'}}</td>
-            <td class="text-right">{{coin['24h_volume_usd'] | currency:'USD':code:'1.0-2'}}</td>
-            <td class="text-right">{{coin.available_supply | number: '1.0-2'}}</td>    
-            <td  *ngIf="coin.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.percent_change_1h}}% &darr; </td>       
-            <td  *ngIf="coin.percent_change_1h > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_1h}}% &uarr; </td>
-            <td  *ngIf="coin.percent_change_24h < '0'"style="color:red" class="text-center"> {{coin.percent_change_24h}}% &darr; </td>
-            <td  *ngIf="coin.percent_change_24h > '0'"style="color:greenyellow" class="text-center"> {{coin.percent_change_24h}}% &uarr; </td>
-            <td  *ngIf="coin.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.percent_change_7d}}% &darr; </td>
-            <td  *ngIf="coin.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.percent_change_7d}}% &uarr; </td>
+            <td class="text-right">{{ coin.quotes.USD?.market_cap | currency:'USD':code:'1.0-2'}}</td>
+            <td class="text-right">{{coin.quotes.USD?.volume_24h | currency:'USD':code:'1.0-2'}}</td>
+            <td class="text-right">{{ coin.total_supply | number: '1.0-2'}}</td>    
+            <td  *ngIf="coin.quotes.USD.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.quotes.USD.percent_change_1h}}% &darr; </td>       
+            <td  *ngIf="coin.quotes.USD.percent_change_1h > '0'" style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_1h}}% &uarr; </td>
+            <td  *ngIf="coin.quotes.USD.percent_change_24h  < '0'"style="color:red" class="text-center"> {{coin.quotes.USD.percent_change_24h}}% &darr; </td>
+            <td  *ngIf="coin.quotes.USD.percent_change_24h  > '0'"style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_24h}}% &uarr; </td>
+            <td  *ngIf="coin.quotes.USD.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.quotes.USD.percent_change_7d}}% &darr; </td>
+            <td  *ngIf="coin.quotes.USD.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_7d}}% &uarr; </td>
             <td class="text-center" style="color:goldenrod; font-size:12px">{{ coin.last_updated * 1000 | timeAgo }}</td>
           </tr>
       </tbody>
