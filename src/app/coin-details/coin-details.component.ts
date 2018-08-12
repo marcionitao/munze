@@ -1,9 +1,11 @@
+
+import {switchMap} from 'rxjs/operators';
 import { Coins } from '../model/coins';
 import { CoinsService } from '../service/coins.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 // import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'app-coin-details',
@@ -20,8 +22,8 @@ export class CoinDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private coinsService: CoinsService) { }
 
   ngOnInit(): void {
-    this.route.params
-      .switchMap((params: Params) => this.coinsService.getCoin(params['id']))
+    this.route.params.pipe(
+      switchMap((params: Params) => this.coinsService.getCoin(params['id'])))
       .subscribe(
         // this converte to json object to array
         data => {

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/operator/catch';
-import { map, catchError } from 'rxjs/operators';
+import { interval, timer, Observable } from 'rxjs';
+import { map, catchError, mergeMap, flatMap, switchMap } from 'rxjs/operators';
+
+import { Coins } from './../model/coins';
 
 @Injectable()
 export class CoinsService {
@@ -29,15 +29,16 @@ export class CoinsService {
 So we will have our data updated in real time */
   
 // Public API V2 CoinMarketCap
-  getCoins() {
+  getCoins(): any {
   
-    return Observable
-    .timer(0, 5000)
-    .flatMap(() =>  this.http.get(this.urlBase_v2))
-    .pipe(
-      map(res => res['data']),
-      catchError(this.handleError)
+    return timer(0,5000).pipe(
+      flatMap(() =>  this.http.get(this.urlBase_v2)
+        .pipe( 
+          map(res => res['data'])
+        )
+      )
     )
+    
   }
 
   getCoin(id: any) {
