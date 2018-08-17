@@ -2,7 +2,6 @@ import { TopListComponent } from './../top-list/top-list.component';
 import { AboutComponent } from './../about/about.component';
 import { CoinDetailsComponent } from './../coin-details/coin-details.component';
 import { CoinsComponent } from './../coins/coins.component';
-import { AppComponent } from './../app.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';

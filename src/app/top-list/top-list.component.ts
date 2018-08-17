@@ -21,10 +21,6 @@ export class TopListComponent implements OnInit {
   getCoins() {
     this.coinsService.getCoins()
       .subscribe(
-        /*coin => {
-        this.coins = coin; console.log(coin)
-        }*/
-
         // this converte to json object to array
         data => {
           this.coins = [];

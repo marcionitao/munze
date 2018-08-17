@@ -1,15 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
-import { interval, timer, Observable } from 'rxjs';
-import { map, catchError, mergeMap, flatMap, switchMap } from 'rxjs/operators';
-
-import { Coins } from './../model/coins';
+import { timer } from 'rxjs';
+import { map, flatMap } from 'rxjs/operators';
 
 @Injectable()
 export class CoinsService {
-
-  // private headers = new Headers({ 'Content-Type': 'application/json' });
 
   urlBase_v1 = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
   urlBase_v2 = 'https://api.coinmarketcap.com/v2/ticker/?limit=10';
@@ -17,14 +12,6 @@ export class CoinsService {
   idCoin: any;
 
   constructor(private http: HttpClient) { }
-/*
-  getCoins() {
-    return this.http.get(this.urlBase)
-    .map(response => response.json())
-    .catch(this.handleError);
-  }
-*/
-
 /* It will do GET request in server API location in 5000 mileseconds.
 So we will have our data updated in real time */
   
@@ -37,8 +24,7 @@ So we will have our data updated in real time */
           map(res => res['data'])
         )
       )
-    )
-    
+    )  
   }
 
   getCoin(id: any) {
@@ -47,30 +33,20 @@ So we will have our data updated in real time */
     const url = this.urlDetails + '/' + id + '/';
    
     return this.http.get(url)
-    .pipe(
+    /*.pipe(
       map(res => res),
       catchError(this.handleError)
-    )
+    )*/
   }
 
   getCurrency(currency) {
     const url = this.urlDetails + '/' + this.idCoin + '/?convert=' + currency;
    
     return this.http.get(url)
-    .pipe(
+    /*.pipe(
       map(res => res),
       catchError(this.handleError)
-    )
-  }
-
-  // method of test
-  getCoinCurrency(coin) {
-    console.log('Coin: ' + coin + ' Currency: ' + this.idCoin);
-  }
-
-   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+    )*/
   }
 
 }
