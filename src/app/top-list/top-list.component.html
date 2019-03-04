@@ -7,86 +7,50 @@
   </div>
 
   <div class="container">
-    
+
     <table class="table table-responsive " style="font-size:14px;">
       <thead style="color:azure">
         <tr class="default">
           <th>#</th>
-          <th>Rank</th>
-          <th>Name</th>                  
+          <th>Name</th>
           <th class="text-right">Price</th>
           <th class="text-right">Market Cap</th>
           <th class="text-right">Volume(24h)</th>
           <th class="text-right">Circulating Supply</th>
-          <th class="text-center">Change 1h</th>
+        <!-- <th class="text-center">Change 1h</th> -->
           <th class="text-center">Change 24h</th>
-          <th class="text-center">Change 7d</th>    
-          <th class="text-center">Update Time</th>  
+          <!--<th class="text-center">Change 7d</th>-->
+          <th class="text-center">Update Time</th>
         </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let coin of coins" style="color:white;">
-            <td class="text-center" *ngIf="coin.name == 'Bitcoin'" ><img src="./assets/image/coin-1.png" style="width:16px;"></td>
-            <td class="text-center" *ngIf="coin.name == 'Ethereum'" ><img src="./assets/image/coin-2.png" style="width:16px;"></td>
-            <td class="text-center" *ngIf="coin.name == 'Ripple'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/52.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Bitcoin Cash'" ><img src="./assets/image/coin-11.png" style="width:16px;"></td>
-            <td class="text-center" *ngIf="coin.name == 'NEM'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/nem.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Litecoin'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/2.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'IOTA'" ><img src="./assets/image/coin-10.png" style="width:16px;"></td>
-            <td class="text-center" *ngIf="coin.name == 'NEO'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1376.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Dash'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/131.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Ethereum Classic'" ><img src="https://files.coinmarketcap.com/static/img/coins/16x16/ethereum-classic.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Qtum'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/qtum.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Stratis'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/stratis.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'TRON'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1958.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Monero'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/328.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'BitConnect'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/bitconnect.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Bitcoin Gold'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/bitcoin-gold.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Cardano'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/2010.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'Stellar'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/512.png"></td>
-            <td class="text-center" *ngIf="coin.name == 'EOS'" ><img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1765.png"></td>
-            <td class="text-center" *ngIf="(coin.name !== 'Bitcoin Cash') 
-                                        && (coin.name !== 'Bitcoin') 
-                                        && (coin.name !== 'Ethereum')
-                                        && (coin.name !== 'NEM')
-                                        && (coin.name !== 'Stratis')
-                                        && (coin.name !== 'Dash')
-                                        && (coin.name !== 'Ethereum Classic')
-                                        && (coin.name !== 'Litecoin')
-                                        && (coin.name !== 'Monero')
-                                        && (coin.name !== 'Ripple')
-                                        && (coin.name !== 'NEO')
-                                        && (coin.name !== 'TRON')
-                                        && (coin.name !== 'Qtum')
-                                        && (coin.name !== 'BitConnect')
-                                        && (coin.name !== 'Bitcoin Gold')
-                                        && (coin.name !== 'Cardano')
-                                        && (coin.name !== 'Stellar')
-                                        && (coin.name !== 'EOS')
-                                        && (coin.name !== 'IOTA')" ><img src="./assets/image/error_2.png" id="img-coin">
+          <tr *ngFor="let coin of coinsV3" style="color:white;">
+            <td class="text-center"><img src="https://www.cryptocompare.com{{coin.CoinInfo.ImageUrl}}" style="width:16px;"></td>
+
+            <td class="text-left" style="color:gold">
+              <a [routerLink]="['/selected', coin.CoinInfo.Name]" style="text-decoration:none">{{coin.CoinInfo.FullName}}</a>
             </td>
 
-            <td class="text-center" >{{coin.rank}}</td>
-            <td class="text-left" style="color:gold">
-              <!--<a (click)="coinDetails(coin.id)">{{coin.name}}</a>-->
-              <a [routerLink]="['/selected', coin.id]" style="text-decoration:none">{{coin.name}}</a>
-            </td>         
-            <td class="text-right">{{coin.quotes.USD?.price | currency:'USD':code:'1.2-2'}}</td>           
-            
-            <td class="text-right">{{ coin.quotes.USD?.market_cap | currency:'USD':code:'1.0-2'}}</td>
-            <td class="text-right">{{coin.quotes.USD?.volume_24h | currency:'USD':code:'1.0-2'}}</td>
-            <td class="text-right">{{ coin.total_supply | number: '1.0-2'}}</td>    
-            <td  *ngIf="coin.quotes.USD.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.quotes.USD.percent_change_1h}}% &darr; </td>       
+            <td class="text-right">{{coin.RAW.USD.PRICE | currency:'USD':code:'1.2-2'}}</td>
+            <td class="text-right">{{coin.RAW.USD.MKTCAP | currency:'USD':code:'1.0-2'}}</td>
+            <td class="text-right">{{coin.RAW.USD.TOTALVOLUME24H | currency:'USD':code:'1.0-2'}}</td>
+            <td class="text-right">{{ coin.RAW.USD.SUPPLY | number: '1.0-2'}}</td>
+            <!--
+            <td  *ngIf="coin.quotes.USD.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.quotes.USD.percent_change_1h}}% &darr; </td>
             <td  *ngIf="coin.quotes.USD.percent_change_1h > '0'" style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_1h}}% &uarr; </td>
-            <td  *ngIf="coin.quotes.USD.percent_change_24h  < '0'"style="color:red" class="text-center"> {{coin.quotes.USD.percent_change_24h}}% &darr; </td>
-            <td  *ngIf="coin.quotes.USD.percent_change_24h  > '0'"style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_24h}}% &uarr; </td>
+            -->
+            <td  *ngIf="coin.RAW.USD.CHANGEPCT24HOUR  < '0'"style="color:red" class="text-center"> {{coin.RAW.USD.CHANGEPCT24HOUR | number: '1.0-2'}}% &darr; </td>
+            <td  *ngIf="coin.RAW.USD.CHANGEPCT24HOUR  > '0'"style="color:greenyellow" class="text-center"> {{coin.RAW.USD.CHANGEPCT24HOUR | number: '1.0-2'}}% &uarr; </td>
+                     <!--
             <td  *ngIf="coin.quotes.USD.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.quotes.USD.percent_change_7d}}% &darr; </td>
             <td  *ngIf="coin.quotes.USD.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_7d}}% &uarr; </td>
-            <td class="text-center" style="color:goldenrod; font-size:12px">{{ coin.last_updated * 1000 | timeAgo }}</td>
+            -->
+            <td class="text-center" style="color:goldenrod; font-size:12px">{{ coin.RAW.USD.LASTUPDATE * 1000 | timeAgo }}</td>
+
           </tr>
       </tbody>
     </table>
 
   </div>
-  
+
 </div>

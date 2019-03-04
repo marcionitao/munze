@@ -64,7 +64,7 @@
 .card-text {
   vertical-align: middle;
   font-family: 'Questrial', sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   color: white;
   margin-bottom: 1px;
 }
@@ -81,10 +81,6 @@ a {
 #img-coin {
   width: 55px;
   vertical-align: middle;
+  opacity: 1;
 }
 
-#_24 {
-  font-family: 'Questrial', sans-serif;
-  font-size: 16px;
-  margin-bottom: 5px!important;
-}

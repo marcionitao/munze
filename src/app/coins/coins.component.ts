@@ -12,28 +12,45 @@ import { Router } from '@angular/router';
 export class CoinsComponent implements OnInit {
 
   coins: Coins[] = [];
+  coinsV3: any;
 
   constructor(private coinsService: CoinsService, private router: Router) { }
 
   ngOnInit() {
-    this.getCoins();
+
+    this.show();
   }
 
-  getCoins() {
-    this.coinsService.getCoins().subscribe(
+  show() {
+    this.coinsService.getCoinsV3().subscribe(
 
       data => {
-        this.coins = [];
+        this.coinsV3 = [];
         Object.keys(data)
         .map(
-          (key) => { 
-            this.coins.push(data[key])
+          (key) => {
+            this.coinsV3.push(data[key]);
           }
-        ); 
-        // To order by Rank
-        this.coins.sort( (a, b) => a.rank - b.rank) ;  
+        );
       }
-    );
+    )
   }
+
+  // getCoins() {
+  //   this.coinsService.getCoins().subscribe(
+
+  //     data => {
+  //       this.coins = [];
+  //       Object.keys(data)
+  //       .map(
+  //         (key) => {
+  //           this.coins.push(data[key])
+  //         }
+  //       );
+  //       // To order by Rank
+  //       this.coins.sort( (a, b) => a.rank - b.rank) ;
+  //     }
+  //   );
+  // }
 
 }

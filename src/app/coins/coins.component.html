@@ -2,66 +2,30 @@
 
   <div class="card-columns">
 
-    <div class="card card-inverse" *ngFor="let coin of coins">
+    <div class="card card-inverse" *ngFor="let coin of coinsV3">
 
       <!--<a (click)="coinDetails(coin.id)">-->
-      <a [routerLink]="['/selected', coin.id]" style="text-decoration:none">
-        
+      <a [routerLink]="['/selected', coin.CoinInfo.Name]" style="text-decoration:none">
+
         <div class="card-header">
-          <span>{{coin.name}}</span>
-          <span style="float: right; color:gold; font-size:13px">{{coin.rank}}º Rank</span>
+          <span>{{coin.CoinInfo.FullName}}</span>
+          <span style="float: right; color:goldenrod; font-size:10px">{{ coin.RAW.USD.LASTUPDATE * 1000 | timeAgo }}</span>
         </div>
 
         <div class="card-block">
-          
+
           <div class="row">
+
             <div class="col-4">
-              <img *ngIf="coin.name == 'Bitcoin'"  src="./assets/image/coin-1.png" id="img-coin">
-              <img *ngIf="coin.name == 'Ethereum'"  src="./assets/image/coin-2.png" id="img-coin">
-              <img *ngIf="coin.name == 'NEM'"  src="./assets/image/coin-3.png" id="img-coin">
-              <img *ngIf="coin.name == 'Stratis'"  src="./assets/image/coin-4.png" id="img-coin">
-              <img *ngIf="coin.name == 'Dash'"  src="./assets/image/coin-5.png" id="img-coin">
-              <img *ngIf="coin.name == 'Ethereum Classic'"  src="./assets/image/coin-6.png" id="img-coin">
-              <img *ngIf="coin.name == 'Litecoin'"  src="./assets/image/coin-7.png" id="img-coin">
-              <img *ngIf="coin.name == 'Monero'"  src="./assets/image/coin-8.png" id="img-coin">
-              <img *ngIf="coin.name == 'Ripple'"  src="./assets/image/coin-9.png" id="img-coin">
-              <img *ngIf="coin.name == 'IOTA'"  src="./assets/image/coin-10.png" id="img-coin">
-              <img *ngIf="coin.name == 'Bitcoin Cash'"  src="./assets/image/coin-11.png" id="img-coin">
-              <img *ngIf="coin.name == 'NEO'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/1376.png" id="img-coin">
-              <img *ngIf="coin.name == 'TRON'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png" id="img-coin">
-              <img *ngIf="coin.name == 'Qtum'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/qtum.png" id="img-coin">
-              <img *ngIf="coin.name == 'BitConnect'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/bitconnect.png" id="img-coin">
-              <img *ngIf="coin.name == 'Bitcoin Gold'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/bitcoin-gold.png" id="img-coin">
-              <img *ngIf="coin.name == 'Cardano'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png" id="img-coin">
-              <img *ngIf="coin.name == 'Stellar'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/512.png" id="img-coin">
-              <img *ngIf="coin.name == 'EOS'"  src="https://s2.coinmarketcap.com/static/img/coins/128x128/1765.png" id="img-coin">
-              <img *ngIf="(coin.name !== 'Bitcoin Cash') 
-                && (coin.name !== 'Bitcoin') 
-                && (coin.name !== 'Ethereum')
-                && (coin.name !== 'Stellar')
-                && (coin.name !== 'EOS')
-                && (coin.name !== 'NEM')
-                && (coin.name !== 'Stratis')
-                && (coin.name !== 'Dash')
-                && (coin.name !== 'Ethereum Classic')
-                && (coin.name !== 'Litecoin')
-                && (coin.name !== 'Monero')
-                && (coin.name !== 'Ripple')
-                && (coin.name !== 'NEO')
-                && (coin.name !== 'TRON')
-                && (coin.name !== 'Qtum')
-                && (coin.name !== 'BitConnect')
-                && (coin.name !== 'Bitcoin Gold')
-                && (coin.name !== 'Cardano')
-                && (coin.name !== 'IOTA')"  src="./assets/image/error.png" id="img-coin">
+              <img src="https://www.cryptocompare.com{{coin.CoinInfo.ImageUrl}}" id="img-coin">
             </div>
 
             <div class="col-8">
-              <p class="card-text">{{coin.quotes.USD.price | currency:'USD':code:'1.2-2'}}</p>
-              <p id="_24h" *ngIf="coin.quotes.USD.percent_change_24h < '0'" style="color:red">{{coin.quotes.USD.percent_change_24h}}% &darr;</p>
-              <p id="_24h" *ngIf="coin.quotes.USD.percent_change_24h > '0'" style="color:greenyellow">{{coin.quotes.USD.percent_change_24h}}% &uarr;</p>
-             
+              <p class="card-text">{{coin.RAW.USD.PRICE | currency:'USD':code:'1.2-2'}}</p>
+              <p *ngIf="coin.RAW.USD.CHANGEPCT24HOUR < '0'" style="color:red">{{coin.RAW.USD.CHANGEPCT24HOUR | number: '1.0-2'}}% &darr;</p>
+              <p *ngIf="coin.RAW.USD.CHANGEPCT24HOUR > '0'" style="color:greenyellow">{{coin.RAW.USD.CHANGEPCT24HOUR | number: '1.0-2'}}% &uarr;</p>
             </div>
+
           </div>
 
         </div>

@@ -1,52 +1,41 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { timer } from 'rxjs';
 import { map, flatMap } from 'rxjs/operators';
 
 @Injectable()
 export class CoinsService {
 
-  urlBase_v1 = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
-  urlBase_v2 = 'https://api.coinmarketcap.com/v2/ticker/?limit=10';
-  urlDetails = 'https://api.coinmarketcap.com/v2/ticker';
+  urlDetails = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=';
   idCoin: any;
+  url = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10'
+  currency = 'USD'
+  api = 'fe02f253babe9c83eb2dd82ab68da663401db4fa3270ae1ea85c1c4b93b21aa2';
 
   constructor(private http: HttpClient) { }
-/* It will do GET request in server API location in 5000 mileseconds.
-So we will have our data updated in real time */
-  
-// Public API V2 CoinMarketCap
-  getCoins(): any {
-  
+
+  getCoinsV3(): any {
+
     return timer(0,5000).pipe(
-      flatMap(() =>  this.http.get(this.urlBase_v2)
-        .pipe( 
-          map(res => res['data'])
+      flatMap(() =>  this.http.get(this.url+'&tsym='+this.currency+'&api_key='+this.api)
+        .pipe(
+          map(res =>  res['Data'])
         )
       )
-    )  
+    )
   }
 
   getCoin(id: any) {
 
     this.idCoin = id;
-    const url = this.urlDetails + '/' + id + '/';
-   
+    const url = this.urlDetails + id + '&tsyms=' + this.currency + '&api_key='+this.api;
     return this.http.get(url)
-    /*.pipe(
-      map(res => res),
-      catchError(this.handleError)
-    )*/
   }
 
   getCurrency(currency) {
-    const url = this.urlDetails + '/' + this.idCoin + '/?convert=' + currency;
-   
+
+    const url = this.urlDetails + this.idCoin + '&tsyms=' + currency + '&api_key='+this.api;
     return this.http.get(url)
-    /*.pipe(
-      map(res => res),
-      catchError(this.handleError)
-    )*/
   }
 
 }
