@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-declare const ga: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,5 +9,4 @@ declare const ga: any;
 
 export class AppComponent {
    title = 'app works!';
-
 }
