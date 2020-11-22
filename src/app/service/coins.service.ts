@@ -32,7 +32,7 @@ export class CoinsService {
     return this.http.get(url)
   }
 
-  getCurrency(currency) {
+  getCurrency(currency:any) {
 
     const url = this.urlDetails + this.idCoin + '&tsyms=' + currency + '&api_key='+this.api;
     return this.http.get(url)
