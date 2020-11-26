@@ -31,9 +31,9 @@
               <a [routerLink]="['/selected', coin.CoinInfo.Name]" style="text-decoration:none">{{coin.CoinInfo.FullName}}</a>
             </td>
 
-            <td class="text-right">{{coin.RAW.USD.PRICE | currency:'USD':code:'1.2-2'}}</td>
-            <td class="text-right">{{coin.RAW.USD.MKTCAP | currency:'USD':code:'1.0-2'}}</td>
-            <td class="text-right">{{coin.RAW.USD.TOTALVOLUME24H | currency:'USD':code:'1.0-2'}}</td>
+            <td class="text-right">{{coin.RAW.USD.PRICE | currency:'USD'}}</td>
+            <td class="text-right">{{coin.RAW.USD.MKTCAP | currency:'USD'}}</td>
+            <td class="text-right">{{coin.RAW.USD.TOTALVOLUME24H | currency:'USD'}}</td>
             <td class="text-right">{{ coin.RAW.USD.SUPPLY | number: '1.0-2'}}</td>
             <!--
             <td  *ngIf="coin.quotes.USD.percent_change_1h < '0'" style="color:red" class="text-center">{{coin.quotes.USD.percent_change_1h}}% &darr; </td>
@@ -45,8 +45,8 @@
             <td  *ngIf="coin.quotes.USD.percent_change_7d < '0'" style="color:red" class="text-center"> {{coin.quotes.USD.percent_change_7d}}% &darr; </td>
             <td  *ngIf="coin.quotes.USD.percent_change_7d > '0'" style="color:greenyellow" class="text-center"> {{coin.quotes.USD.percent_change_7d}}% &uarr; </td>
             -->
-            <td class="text-center" style="color:goldenrod; font-size:12px">{{ coin.RAW.USD.LASTUPDATE * 1000 | timeAgo }}</td>
-
+            <td class="text-center" style="color:goldenrod; font-size:12px">{{ coin.RAW.USD.LASTUPDATE * 1000 | timeago }}</td>
+ 
           </tr>
       </tbody>
     </table>

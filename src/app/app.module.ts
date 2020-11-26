@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { RoutingModule } from './routing/routing.module';
 import { CoinsService } from './service/coins.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { HttpClientModule } from '@angular/common/http'
-import { TimeAgoPipe } from 'time-ago-pipe';
 import { AppComponent } from './app.component';
 import { CoinsComponent } from './coins/coins.component';
 import { CoinDetailsComponent } from './coin-details/coin-details.component';
@@ -20,14 +20,15 @@ import { TopListComponent } from './top-list/top-list.component';
     CoinDetailsComponent,
     AboutComponent,
     TopListComponent,
-    TimeAgoPipe
+    //TimeAgoPipe
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    TimeagoModule.forRoot()
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [CoinsService],

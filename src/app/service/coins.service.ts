@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { timer } from 'rxjs';
-import { map, flatMap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { timer, Observable } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
+import { Coins } from 'app/model/coins';
 
 @Injectable()
 export class CoinsService {
@@ -14,12 +15,12 @@ export class CoinsService {
 
   constructor(private http: HttpClient) { }
 
-  getCoinsV3(): any {
+  getCoinsV3(): Observable<Coins[]> {
 
     return timer(0,5000).pipe(
-      flatMap(() =>  this.http.get(this.url+'&tsym='+this.currency+'&api_key='+this.api)
+      mergeMap(() =>  this.http.get<Coins[]>(this.url+'&tsym='+this.currency+'&api_key='+this.api)
         .pipe(
-          map(res =>  res['Data'])
+          map(res =>  {return res['Data']})
         )
       )
     )

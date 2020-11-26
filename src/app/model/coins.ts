@@ -1,4 +1,4 @@
-export class Coins {
+export interface Coins {
   id: string;
   name: string;
   symbol: string;
