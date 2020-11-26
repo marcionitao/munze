@@ -1,20 +1,17 @@
-
-import { Coins } from './../model/coins';
 import { CoinsService } from './../service/coins.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-coins',
   templateUrl: './coins.component.html',
   styleUrls: ['./coins.component.css']
 })
-export class CoinsComponent implements OnInit {
 
-  coins: Coins[] = [];
+export class CoinsComponent implements OnInit  {
+
   coinsV3: any;
 
-  constructor(private coinsService: CoinsService, private router: Router) { }
+  constructor(private coinsService: CoinsService) {}
 
   ngOnInit() {
 
@@ -24,8 +21,9 @@ export class CoinsComponent implements OnInit {
   show() {
     this.coinsService.getCoinsV3().subscribe(
 
-      data => {
+      (data) => {
         this.coinsV3 = [];
+
         Object.keys(data)
         .map(
           (key) => {
@@ -33,7 +31,8 @@ export class CoinsComponent implements OnInit {
           }
         );
       }
-    )
+
+    );
   }
 
   // getCoins() {

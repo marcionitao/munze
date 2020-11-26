@@ -1,7 +1,6 @@
 import { CoinsService } from './../service/coins.service';
 import { Coins } from './../model/coins';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-list',
@@ -13,7 +12,7 @@ export class TopListComponent implements OnInit {
   coins: Coins[];
   coinsV3: any;
 
-  constructor(private coinsService: CoinsService, private router: Router) { }
+  constructor(private coinsService: CoinsService) { }
 
   ngOnInit() {
    this.show();
@@ -22,7 +21,7 @@ export class TopListComponent implements OnInit {
   show() {
     this.coinsService.getCoinsV3().subscribe(
 
-      data => {
+      (data:any) => {
         this.coinsV3 = [];
         Object.keys(data)
         .map(
