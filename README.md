@@ -12,14 +12,15 @@ Cryptocurrencies emerged in 2009 with the first decentralized cryptocurrency - B
 
 ## Technologies
 
-- Angular 4
+- Angular
 - Bootstrap
 - CoinMarketCap API
-- ng2-opd-popup 
+- ng2-opd-popup
 
 ## Locally using npm
 
 - Clone/download the repo
 - cd munze
 - If you don't have angular-cli installed run npm install -g @angular/cli
-- "npm install" for install all packages. After "ng serve" runs the app in development mode. Open http://localhost:4200 to view it in the browser and the page should reload whenever you make edits
+- "npm install" for install all packages. After "ng serve" runs the app in development mode.
+Open <http://localhost:4200> to view it in the browser and the page should reload whenever you make edits
