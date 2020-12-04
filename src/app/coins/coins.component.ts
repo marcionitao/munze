@@ -9,47 +9,28 @@ import { Component, OnInit } from '@angular/core';
 
 export class CoinsComponent implements OnInit  {
 
-  coinsV3: any;
+  coins: any;
 
-  constructor(private coinsService: CoinsService) {}
+  constructor(private service: CoinsService) {}
 
   ngOnInit() {
-
     this.show();
   }
 
   show() {
-    this.coinsService.getCoinsV3().subscribe(
+    this.service.getCoins().subscribe(
 
       (data) => {
-        this.coinsV3 = [];
-
+        this.coins = [];
         Object.keys(data)
         .map(
           (key) => {
-            this.coinsV3.push(data[key]);
+            this.coins.push(data[key]);
           }
         );
       }
 
     );
   }
-
-  // getCoins() {
-  //   this.coinsService.getCoins().subscribe(
-
-  //     data => {
-  //       this.coins = [];
-  //       Object.keys(data)
-  //       .map(
-  //         (key) => {
-  //           this.coins.push(data[key])
-  //         }
-  //       );
-  //       // To order by Rank
-  //       this.coins.sort( (a, b) => a.rank - b.rank) ;
-  //     }
-  //   );
-  // }
 
 }

@@ -1,11 +1,8 @@
 
 import {switchMap} from 'rxjs/operators';
-import { Coins } from '../model/coins';
 import { CoinsService } from '../service/coins.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-// import { Location } from '@angular/common';
-
 
 @Component({
   selector: 'app-coin-details',
@@ -17,16 +14,15 @@ export class CoinDetailsComponent implements OnInit {
 
   selectValue = 'USD';
   currency: any = ['USD', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB'];
-  coins: Coins[] = [];
 
   idCoin: any;
-  coinsV3: any;
+  coins: any;
   objData : object [];
   objREW : object [];
 
   objCoin : string []; // use HTML page
 
-  constructor(private route: ActivatedRoute, private coinsService: CoinsService) { }
+  constructor(private route: ActivatedRoute, private service: CoinsService) { }
 
   ngOnInit(): void {
 
@@ -35,36 +31,19 @@ export class CoinDetailsComponent implements OnInit {
     let param: string = this.idCoin;
 
     this.route.params.pipe(
-      switchMap((params: Params) => this.coinsService.getCoin(params['id']) ))
-      .subscribe(
+      switchMap((params: Params) => this.service.getCoin(params['id']) )
+    ).subscribe(
 
-        data => {
-          this.objData = data as object [];  // FILL THE ARRAY WITH DATA.
-          this.objREW = data["RAW"] ;
-          this.objCoin = this.objREW[param]; // param "BTC, ETH..."
+      data => {
+        this.objData = data as object [];  // FILL THE ARRAY WITH DATA.
+        this.objREW = data["RAW"] ;
+        this.objCoin = this.objREW[param]; // param "BTC, ETH..."
+        // convert object into Array
+        let arr = Array.from(Object.keys(this.objCoin), k => this.objCoin[k]);
 
-          // convert object into Array
-          let arr = Array.from(Object.keys(this.objCoin), k => this.objCoin[k]);
-
-          this.coinsV3 = arr;
-          console.log(this.coinsV3);
-        }
-
-        // this converte to json object to array
-        // data => {
-
-        //   this.coinsV3 = [];
-        //   Object.keys(data)
-        //     .map(
-        //       (key) => {
-        //         this.coinsV3.push(data[key]); console.log(this.coinsV3)
-        //       }
-        //     )
-        //   // item removed of array
-        //   this.coinsV3.splice(1);
-        // }
-
-      )
+        this.coins = arr;
+      }
+    )
   }
 
   onChange(item:any) {
@@ -73,34 +52,19 @@ export class CoinDetailsComponent implements OnInit {
     // convert param(BTC, ETH...) to String
     let param: string = this.idCoin;
     // get convert value coin
-    this.coinsService.getCurrency(item)
-      .subscribe(
+    this.service.getCurrency(item).subscribe(
 
-        // this converte to json object to array
-        data => {
+      // this converte to json object to array
+      data => {
 
-          this.objData = data as object [];  // FILL THE ARRAY WITH DATA.
-          this.objREW = data["RAW"] ;
-          this.objCoin = this.objREW[param]; // param "BTC, ETH..."
+        this.objData = data as object [];  // FILL THE ARRAY WITH DATA.
+        this.objREW = data["RAW"] ;
+        this.objCoin = this.objREW[param]; // param "BTC, ETH..."
+        // convert object into Array
+        let arr = Array.from(Object.keys(this.objCoin), k => this.objCoin[k]);
 
-          // convert object into Array
-          let arr = Array.from(Object.keys(this.objCoin), k => this.objCoin[k]);
-
-          this.coinsV3 = arr;
-          console.log(this.coinsV3);
-
-          // this.coinsV3 = [];
-          // Object.keys(data)
-          //   .map(
-          //     (key) => {
-          //       this.coinsV3.push(data[key])
-          //     }
-
-          //   );
-          // // item removed of array
-          // this.coinsV3.splice(1);
-        }
-      );
+        this.coins = arr;
+      }
+    );
   }
-
 }
