@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { timer, Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { Coins } from 'app/model/coins';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class CoinsService {
 
   urlDetails = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=';
-  api = 'fe02f253babe9c83eb2dd82ab68da663401db4fa3270ae1ea85c1c4b93b21aa2';
+  api: string  = environment.api;
   url = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10'
   idCoin: any;
   currency = 'USD'

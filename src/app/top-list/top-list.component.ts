@@ -19,7 +19,7 @@ export class TopListComponent implements OnInit {
   }
 
   show() {
-    this.coinsService.getCoinsV3().subscribe(
+    this.coinsService.getCoins().subscribe(
 
       (data:any) => {
         this.coinsV3 = [];

@@ -2,7 +2,7 @@
 
   <div class="card-columns">
 
-    <div class="card card-inverse" *ngFor="let coin of coinsV3">
+    <div class="card card-inverse" *ngFor="let coin of coins">
 
       <!--<a (click)="coinDetails(coin.id)">-->
       <a [routerLink]="['/selected', coin.CoinInfo.Name]" style="text-decoration:none">
